@@ -1,0 +1,12 @@
+{
+  "name": "daily-cheer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A daily encouragement letter for juniors",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
