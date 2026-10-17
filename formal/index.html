@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff1ed">
-<meta name="description" content="익명님께 전하는 오늘의 하루 마무리 응원 편지">
+<meta name="description" content="익명님께 전하는 10월 17일 새 편지와 이전의 응원 편지를 함께 읽어보세요">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="오늘도 고생 많으셨어요 🌙">
-<meta property="og:description" content="오늘도 정말 고생 많으셨어요 편지 한 장 남겨봤어요 💌">
-<title>오늘도 고생 많았어 🌙 | 하루 마무리 응원</title>
+<meta property="og:description" content="오늘은 조금 솔직한 이야기를 남겨봤어요 지난 편지도 그대로 보관했어요 💌">
+<title>익명님께 보내는 두 통의 편지 💌 | 하루 마무리 응원</title>
 <style>
 :root{color-scheme:light;--ink:#57464f;--rose:#bb6982;--cream:#fffdf9}
 *{box-sizing:border-box}
@@ -33,44 +33,74 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 .button:active{transform:scale(.98)}
 .hint{font-size:12px;color:#aa9195;margin:18px 0 0}
 .letter-scene{display:none}
-#open:checked ~ main{align-items:flex-start}
-#open:checked ~ main .intro{display:none}
-#open:checked ~ main .letter-scene{display:block;animation:appear .7s both}
+:is(#latest,#previous):checked ~ main{align-items:flex-start}
+:is(#latest,#previous):checked ~ main .intro{display:none}
+#latest:checked ~ main .new-letter,#previous:checked ~ main .old-letter{display:block;animation:appear .7s both}
 .letter-top{font-size:13px;letter-spacing:.15em;font-weight:800;color:#bb758d;margin:5px 0 19px}
 .paper{position:relative;padding:31px clamp(23px,6vw,39px) 33px;border:1px solid #f1d6ce;border-radius:20px;background:linear-gradient(150deg,#fffefc,#fff9f5);box-shadow:0 22px 60px #aa7f8438,0 2px 6px #dcb9b333;text-align:left;overflow:hidden}
 .paper:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(#e3a9aa,#f6cdb7)}
 .paper:after{content:"✿";position:absolute;right:20px;top:10px;font-size:39px;color:#efd0c8;transform:rotate(-16deg);pointer-events:none}
 .paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:1.95;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 17px;opacity:0;transform:translateY(12px)}
 .paper p.dear{font-size:clamp(22px,5.3vw,27px);line-height:1.5;font-weight:800;color:#bf657a;margin-bottom:23px}
-#open:checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.37s)}
+:is(#latest,#previous):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
 .signature{text-align:right!important;color:#bd7488;font-weight:700;margin:21px 0 0!important}
 .foot{margin:23px 0 14px;color:#ac8e98;font-size:13px}
 .back{display:inline-block;padding:11px 20px;color:#a47484;border:1px solid #ddaeb7;border-radius:100px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .back:active{background:#fff6f5}
 .hearts{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .heart{position:absolute;bottom:-42px;left:var(--x);font-size:var(--size);opacity:0}
-#open:checked ~ .hearts .heart{animation:rise var(--duration) ease-out var(--delay) 1 both}
+:is(#latest,#previous):checked ~ .hearts .heart{animation:rise var(--duration) ease-out var(--delay) 1 both}
 @keyframes float{50%{transform:translateY(-10px)}}
 @keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @keyframes lineIn{to{opacity:1;transform:translateY(0)}}
 @keyframes rise{0%{opacity:0;transform:translateY(0) rotate(-13deg)}15%{opacity:.9}85%{opacity:.6}100%{opacity:0;transform:translateY(-115vh) rotate(22deg)}}
 @media(max-width:480px){main{padding:21px 17px 30px}.paper{padding-top:28px}.paper p{margin-bottom:15px}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important}.paper p{opacity:1;transform:none}.heart{display:none}}
+.letter-choices{max-width:415px;display:grid;gap:12px;margin:17px auto 0;text-align:left}
+.choice{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #ead4d8;background:#fffaf8de;border-radius:17px;box-shadow:0 7px 22px #a16f8120;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .15s,box-shadow .15s}
+.choice.featured{background:linear-gradient(135deg,#fff9f6,#ffeff1);border-color:#e6b0bf}
+.choice:hover,.choice:focus-within{transform:translateY(-2px);box-shadow:0 11px 24px #a16f8133}
+.choice-date{font-size:11px;letter-spacing:.08em;font-weight:800;color:#b47b90}
+.choice-title{font-size:17px;font-weight:800;color:#905468;line-height:1.5}
+.choice-desc{font-size:13px;color:#8c7880;line-height:1.65}
+.choice-cta{font-size:13px;font-weight:800;color:#bb6984;margin-top:4px}
+.letter-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.letter-nav .back{display:inline-block;cursor:pointer}
+.switch:focus-visible ~ main .choice{outline-offset:3px}
+@media(max-width:480px){.letter-choices{gap:10px}.choice{padding:15px 17px}.choice-title{font-size:16px}}
 </style>
 </head>
 <body>
 <!-- This page works without client-side JavaScript or external assets. -->
-<input type="checkbox" class="switch" id="open" aria-label="편지 열고 닫기">
+<input type="radio" class="switch" name="letter" id="home" checked aria-label="편지 선택 화면">
+<input type="radio" class="switch" name="letter" id="latest" aria-label="10월 17일 새 편지">
+<input type="radio" class="switch" name="letter" id="previous" aria-label="10월 12일 지난 편지">
 <main>
-<section class="scene intro" aria-label="오늘의 응원 소개">
-<p class="eyebrow">12 OCT 2026 · A LITTLE CHEER 🌙</p>
-<h1>오늘 하루도<br>정말 고생 많으셨어요!</h1>
-<p class="subtitle">익명님께 드리는<br>작은 응원 편지예요 💌</p>
+<section class="scene intro" aria-label="응원 편지 선택">
+<p class="eyebrow">17 OCT 2026 · LETTERS FOR YOU 🌙</p>
+<h1>오늘도 수고 많으셨어요<br>편지가 두 통 도착했어요 💌</h1>
+<p class="subtitle">익명님께 전하는 작은 이야기들이에요<br>읽고 싶은 편지를 골라주세요</p>
 <div class="envelope-wrap" aria-hidden="true"><div class="envelope"><div class="letter-peek"></div><div class="flap"></div><div class="seal">♥</div></div></div>
-<label for="open" class="button">💌 오늘의 응원 열어보기</label>
-<p class="hint">버튼을 누르면 편지가 열려요 ✨</p>
+<div class="letter-choices" aria-label="편지 목록">
+<label for="latest" class="choice featured"><span class="choice-date">NEW · 2026.10.17</span><span class="choice-title">💌 잘하고 있는 걸까 싶은 하루에도</span><span class="choice-desc">조금 힘들어도 포기하지 않겠다는 오늘의 이야기</span><span class="choice-cta">새 편지 열어보기 →</span></label>
+<label for="previous" class="choice"><span class="choice-date">2026.10.12 · 지난 편지</span><span class="choice-title">🌙 오늘도 정말 고생 많으셨어요</span><span class="choice-desc">전에 전했던 응원을 그대로 남겨두었어요</span><span class="choice-cta">지난 편지 다시 읽기 →</span></label>
+</div>
+<p class="hint">두 편지 모두 언제든 다시 열어볼 수 있어요 ✨</p>
 </section>
-<section class="scene letter-scene" aria-label="익명님께 보내는 하루 마무리 응원">
+<section class="scene letter-scene new-letter" aria-label="10월 17일 새 응원 편지">
+<p class="letter-top">17 OCT 2026 · TO. 익명님 · FROM. 동석 🌙</p>
+<article class="paper">
+<p class="dear" style="--n:0">오늘은 조금 솔직한 이야기를 남겨보고 싶어요 😊</p>
+<p style="--n:1">오늘도 계속 공부하고 있는데 참 이상하더라고요 분명 어제보다 조금은 아는 게 많아진 것 같다가도 막상 문제를 풀어보면 여전히 헷갈리는 게 나오고 공부한 만큼 실력이 늘고 있는 건지 잘 모르겠어요 오늘은 유독 그런 마음이 컸어요 나름대로 시간을 들여서 열심히 하고 있는데 잘되고 있는 것 같으면서도 아닌 것 같고 앞으로 얼마나 더 해야 할지 생각하면 조금 막막하기도 하더라고요</p>
+<p style="--n:2">가끔은 이렇게 해도 괜찮을까 싶고 다른 사람들은 벌써 저보다 훨씬 앞서 있는 것처럼 느껴질 때도 있어요 솔직히 힘들고 지치는 날도 있지만 그렇다고 여기서 포기하고 싶지는 않아요 제가 선택한 일이고 해보고 싶은 것도 여전히 많으니까요 이해가 안 되는 건 다시 보고 틀린 문제는 또 풀어보면서 어떻게든 끝까지 해보려고요 대단한 각오라기보다는 오늘 할 수 있는 걸 내일도 이어가보자는 마음에 가까운 것 같아요 ㅎㅎ</p>
+<p style="--n:3">전에 익명님이 미래가 어떻게 될지는 아무도 모른다고 해주셨잖아요 그 말이 오늘따라 생각나더라고요 결과를 아직 알 수는 없지만 지금 제가 할 수 있는 걸 계속해보는 수밖에 없겠죠 오늘 하루가 조금 답답했어도 제가 아예 멈춘 건 아니니까 그걸로도 의미는 있다고 생각하려고요</p>
+<p style="--n:4">익명님도 요즘 이런저런 고민이 많으실 텐데 오늘 하루가 너무 무겁지는 않았으면 좋겠어요 이렇게 글을 쓰고 나니까 저도 마음이 조금 정리되는 것 같아요 오늘도 정말 고생 많으셨고 남은 밤은 편하게 보내셨으면 좋겠습니다 😊</p>
+<p class="signature" style="--n:5">— 동석 드림 🌙</p>
+</article>
+<p class="foot">서두르지 않고 내일도 다시 해보려고요 🌙</p>
+<div class="letter-nav"><label for="home" class="back">← 편지 목록으로</label><label for="previous" class="back">지난 편지 읽기 ↗</label></div>
+</section>
+<section class="scene letter-scene old-letter" aria-label="익명님께 보내는 하루 마무리 응원">
 <p class="letter-top">TO. 익명님 · FROM. 동석 🌙</p>
 <article class="paper">
 <p class="dear" style="--n:0">오늘도 정말 고생 많으셨어요 😊</p>
@@ -78,7 +108,7 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <p class="signature" style="--n:2">— 동석 드림 🌙</p>
 </article>
 <p class="foot">오늘도 수고 많으셨어요 편안한 밤 보내세요 🌙</p>
-<label for="open" class="back">↻ 처음부터 다시 보기</label>
+<div class="letter-nav"><label for="home" class="back">← 편지 목록으로</label><label for="latest" class="back">새 편지 읽기 ↗</label></div>
 </section>
 </main>
 <div class="hearts" aria-hidden="true">
