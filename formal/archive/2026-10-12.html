@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff1ed">
+<meta name="description" content="익명님께 전하는 오늘의 하루 마무리 응원 편지">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="오늘도 고생 많으셨어요 🌙">
+<meta property="og:description" content="오늘도 정말 고생 많으셨어요 편지 한 장 남겨봤어요 💌">
+<title>오늘도 고생 많았어 🌙 | 하루 마무리 응원</title>
+<style>
+:root{color-scheme:light;--ink:#57464f;--rose:#bb6982;--cream:#fffdf9}
+*{box-sizing:border-box}
+html{min-height:100%;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;font-family:"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 17% 11%,#fff6d9,transparent 36%),radial-gradient(circle at 85% 80%,#f4d5e8,transparent 38%),linear-gradient(160deg,#fff7f1,#fae8e8 58%,#f9eaf2);overflow-x:hidden}
+.switch{position:absolute;width:1px;height:1px;opacity:0;left:0;top:0}
+main{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:26px 19px 35px}
+.scene{width:100%;max-width:500px;text-align:center}
+.eyebrow{font-size:12px;letter-spacing:.2em;font-weight:800;color:#b88596;margin:0 0 16px}
+h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#98566d;margin:0}
+.subtitle{font-size:16px;line-height:1.85;color:#957b81;margin:13px auto 0;word-break:keep-all}
+.envelope-wrap{width:250px;height:210px;display:flex;align-items:center;justify-content:center;margin:16px auto 14px;animation:float 3.8s ease-in-out infinite}
+.envelope{position:relative;width:235px;height:150px;background:#eba6b0;border-radius:11px 11px 15px 15px;box-shadow:0 19px 35px #ad718b42}
+.letter-peek{position:absolute;width:190px;height:112px;top:-30px;left:22px;background:#fffefa;border-radius:9px;box-shadow:0 0 0 1px #f4d1c9}
+.letter-peek:before{content:"FOR YOU";position:absolute;top:20px;left:0;right:0;color:#c58b91;font-size:12px;font-weight:800;letter-spacing:.17em}
+.envelope:before{content:"";position:absolute;inset:0;background:#f9c4c6;clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);border-radius:11px 11px 15px 15px;z-index:2}
+.envelope:after{content:"";position:absolute;inset:0;background:#f8babe;clip-path:polygon(0 100%,50% 42%,100% 100%);border-radius:0 0 15px 15px;z-index:3}
+.flap{position:absolute;top:0;left:0;right:0;height:96px;background:#dd8d9d;clip-path:polygon(0 0,100% 0,50% 100%);z-index:4}
+.seal{position:absolute;left:calc(50% - 23px);top:61px;width:46px;height:46px;border-radius:50%;background:#fff8ef;z-index:5;display:flex;align-items:center;justify-content:center;color:#cd7285;font-size:22px;box-shadow:0 2px 9px #aa71885c}
+.button{display:inline-block;font-size:16px;font-weight:800;text-decoration:none;color:white;border:0;padding:16px 30px;border-radius:100px;background:linear-gradient(120deg,#d98592,#bb6984);box-shadow:0 9px 23px #cb88954d;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.button:active{transform:scale(.98)}
+.hint{font-size:12px;color:#aa9195;margin:18px 0 0}
+.letter-scene{display:none}
+#open:checked ~ main{align-items:flex-start}
+#open:checked ~ main .intro{display:none}
+#open:checked ~ main .letter-scene{display:block;animation:appear .7s both}
+.letter-top{font-size:13px;letter-spacing:.15em;font-weight:800;color:#bb758d;margin:5px 0 19px}
+.paper{position:relative;padding:31px clamp(23px,6vw,39px) 33px;border:1px solid #f1d6ce;border-radius:20px;background:linear-gradient(150deg,#fffefc,#fff9f5);box-shadow:0 22px 60px #aa7f8438,0 2px 6px #dcb9b333;text-align:left;overflow:hidden}
+.paper:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(#e3a9aa,#f6cdb7)}
+.paper:after{content:"✿";position:absolute;right:20px;top:10px;font-size:39px;color:#efd0c8;transform:rotate(-16deg);pointer-events:none}
+.paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:1.95;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 17px;opacity:0;transform:translateY(12px)}
+.paper p.dear{font-size:clamp(22px,5.3vw,27px);line-height:1.5;font-weight:800;color:#bf657a;margin-bottom:23px}
+#open:checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.37s)}
+.signature{text-align:right!important;color:#bd7488;font-weight:700;margin:21px 0 0!important}
+.foot{margin:23px 0 14px;color:#ac8e98;font-size:13px}
+.back{display:inline-block;padding:11px 20px;color:#a47484;border:1px solid #ddaeb7;border-radius:100px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.back:active{background:#fff6f5}
+.hearts{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-42px;left:var(--x);font-size:var(--size);opacity:0}
+#open:checked ~ .hearts .heart{animation:rise var(--duration) ease-out var(--delay) 1 both}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineIn{to{opacity:1;transform:translateY(0)}}
+@keyframes rise{0%{opacity:0;transform:translateY(0) rotate(-13deg)}15%{opacity:.9}85%{opacity:.6}100%{opacity:0;transform:translateY(-115vh) rotate(22deg)}}
+@media(max-width:480px){main{padding:21px 17px 30px}.paper{padding-top:28px}.paper p{margin-bottom:15px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0s!important}.paper p{opacity:1;transform:none}.heart{display:none}}
+</style>
+</head>
+<body>
+<!-- This page works without client-side JavaScript or external assets. -->
+<input type="checkbox" class="switch" id="open" aria-label="편지 열고 닫기">
+<main>
+<section class="scene intro" aria-label="오늘의 응원 소개">
+<p class="eyebrow">12 OCT 2026 · A LITTLE CHEER 🌙</p>
+<h1>오늘 하루도<br>정말 고생 많으셨어요!</h1>
+<p class="subtitle">익명님께 드리는<br>작은 응원 편지예요 💌</p>
+<div class="envelope-wrap" aria-hidden="true"><div class="envelope"><div class="letter-peek"></div><div class="flap"></div><div class="seal">♥</div></div></div>
+<label for="open" class="button">💌 오늘의 응원 열어보기</label>
+<p class="hint">버튼을 누르면 편지가 열려요 ✨</p>
+</section>
+<section class="scene letter-scene" aria-label="익명님께 보내는 하루 마무리 응원">
+<p class="letter-top">TO. 익명님 · FROM. 동석 🌙</p>
+<article class="paper">
+<p class="dear" style="--n:0">오늘도 정말 고생 많으셨어요 😊</p>
+<p style="--n:1">월요일이라 그런지 주말 끝나고 다시 학교 가는 게 쉽지만은 않았을 텐데 오늘 하루 잘 보내셨나요? 오늘은 조금 특별한 방식으로 써봤어요! 저는 오늘 정보처리기사 실기 공부도 하고 LLM 공부하면서 헷갈렸던 개념들도 다시 정리해보고 전에 만들던 퀘이사 작품도 조금씩 수정하면서 하루를 보냈어요 이것저것 하다 보니까 시간이 정말 빠르게 지나가더라고요 요즘 시험기간이라 그런지 해야 할 일은 계속 늘어나는데 시간은 생각보다 부족한 것 같아요 그래도 너무 급하게 생각하지 않으려고 해요 익명님도 아마 비슷한 마음일 것 같은데 공부하다가 잘 이해되지 않는 부분이 있거나 계획했던 만큼 진도를 못 나갔다고 해서 너무 스트레스받지는 않으셨으면 좋겠어요 저도 공부하면서 분명 전에 배웠던 내용인데 다시 보면 헷갈리는 게 많더라고요 ㅋㅋ 그럴 때마다 다시 읽어보고 문제도 풀어보면서 조금씩 익숙해지고 있어요 그러니까 우리 너무 조급해하지 말고 할 수 있는 만큼 차근차근 해봐요! 그리고 요즘 날씨도 점점 쌀쌀해지고 있으니까 감기 조심하고 밥도 꼭 잘 챙겨 먹었으면 좋겠습니다! 시험 준비한다고 잠까지 줄여가면서 무리하지는 말고 오늘 할 만큼 했다 싶으면 편하게 쉬어도 괜찮아요 아직 한 주가 많이 남았으니까 내일 다시 이어서 하면 되죠 ㅎㅎ 오늘 하루도 수업 듣고 공부하고 해야 할 일들 챙기느라 정말 수고 많았어요 혹시 오늘 힘든 일이 있으셨더라도 너무 오래 마음에 담아두지 않으셨으면 좋겠고 내일은 조금 더 기분 좋은 일들이 많았으면 좋겠어요! 남은 밤 편하게 보내고 푹 주무시고 내일도 같이 힘내봐요! 좋은 밤 보내세요! 😊</p>
+<p class="signature" style="--n:2">— 동석 드림 🌙</p>
+</article>
+<p class="foot">오늘도 수고 많으셨어요 편안한 밤 보내세요 🌙</p>
+<label for="open" class="back">↻ 처음부터 다시 보기</label>
+</section>
+</main>
+<div class="hearts" aria-hidden="true">
+<span class="heart" style="--x:4%;--size:19px;--duration:4.1s;--delay:0s">💗</span>
+<span class="heart" style="--x:17%;--size:23px;--duration:4.5s;--delay:.25s">💛</span>
+<span class="heart" style="--x:32%;--size:18px;--duration:4s;--delay:.4s">✨</span>
+<span class="heart" style="--x:49%;--size:27px;--duration:4.7s;--delay:.1s">🌸</span>
+<span class="heart" style="--x:64%;--size:21px;--duration:4.4s;--delay:.7s">💗</span>
+<span class="heart" style="--x:78%;--size:18px;--duration:4s;--delay:.35s">✨</span>
+<span class="heart" style="--x:91%;--size:25px;--duration:4.8s;--delay:.6s">💌</span>
+<span class="heart" style="--x:10%;--size:25px;--duration:4.6s;--delay:1s">🤍</span>
+<span class="heart" style="--x:57%;--size:18px;--duration:4.1s;--delay:1.1s">💛</span>
+<span class="heart" style="--x:84%;--size:22px;--duration:4.4s;--delay:1.4s">🌸</span>
+</div>
+</body>
+</html>
