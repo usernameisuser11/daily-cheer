@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f7ec">
+<meta name="description" content="조금 늦더라도 마음은 잘 전해지길 바라며, 꽃처럼 작은 응원 편지 한 통.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="너에게 먼저 도착한 편지 🌷">
+<meta property="og:description" content="시험도, 남은 꽃 나눔도 잘 마무리하길 바라며 작은 편지를 남겼어 💌">
+<title>너에게 먼저 도착한 편지 🌷 | 작은 편지함</title>
+<style>
+:root{color-scheme:light;--ink:#4d5247;--forest:#647d64;--sage:#9bb69a;--rose:#ce8392;--paper:#fffef9;--line:#e2e3d6}
+*{box-sizing:border-box}
+html{min-height:100%;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;font-family:"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;color:var(--ink);background:radial-gradient(ellipse at 13% 11%,#fff0e7 0,transparent 36%),radial-gradient(ellipse at 84% 22%,#ecf2df 0,transparent 39%),radial-gradient(ellipse at 38% 90%,#f6e9ee 0,transparent 47%),#f8f7ec;overflow-x:hidden}
+body:before{content:"";pointer-events:none;position:fixed;inset:0;opacity:.22;background-image:radial-gradient(#b9b7a7 .55px,transparent .55px);background-size:8px 8px}
+.toggle{position:absolute;width:1px;height:1px;opacity:0;top:0;left:0}
+main{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:36px 18px 40px;z-index:1}
+.scene{width:100%;max-width:520px;text-align:center}
+.kicker{font-size:11px;font-weight:800;letter-spacing:.25em;color:#879980;margin:0 0 17px}
+h1{font-size:clamp(29px,6.8vw,42px);line-height:1.42;letter-spacing:-.055em;font-weight:800;margin:0;color:#536b55;word-break:keep-all}
+.subtitle{font-size:clamp(14px,3.6vw,16px);line-height:1.9;color:#858b7b;margin:15px auto 0;word-break:keep-all}
+.flower-art{height:218px;display:flex;align-items:center;justify-content:center;margin:10px auto 3px;filter:drop-shadow(0 14px 11px #b4c3aa32)}
+.flower-art svg{width:228px;height:215px;overflow:visible;animation:sway 4.7s ease-in-out infinite;transform-origin:50% 85%}
+.flower-art .petal{fill:#fff9ec;stroke:#edddc9;stroke-width:1.5}
+.flower-art .center{fill:#ecc37b}
+.flower-art .leaf{fill:#96b58e}
+.flower-art .stem{stroke:#739f7a;stroke-width:7;stroke-linecap:round;fill:none}
+.flower-art .wrap{fill:#f2d5cb;stroke:#ebc8bd;stroke-width:1.5}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 30px;border:0;border-radius:999px;background:#6e9074;color:#fff;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 11px 25px #6e90743d;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s,box-shadow .2s}
+.button:hover{transform:translateY(-2px);box-shadow:0 15px 27px #6e90744a}
+.button:active{transform:translateY(1px)}
+.hint{font-size:12px;color:#9a9d8e;margin:16px 0 0}
+.note-tag{display:inline-block;margin-top:25px;color:#8b9a87;font-size:12px;border-top:1px solid #d4dccc;padding:13px 16px}
+.letter{display:none}
+#open:checked ~ main{align-items:flex-start}
+#open:checked ~ main .cover{display:none}
+#open:checked ~ main .letter{display:block;animation:arrive .7s both}
+.letter-kicker{font-size:12px;letter-spacing:.13em;color:#8ba082;font-weight:800;margin:4px 0 18px}
+.paper{position:relative;text-align:left;overflow:hidden;border:1px solid #e5dfd3;border-radius:9px 24px 14px 24px;padding:40px clamp(23px,6vw,42px) 35px;background:linear-gradient(145deg,#fffef9,#fffdf6);box-shadow:0 22px 50px #777e5c24,0 4px 12px #777e5c12}
+.paper:before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:linear-gradient(#b6ceb5,#e9c7c9)}
+.paper:after{content:"✿";position:absolute;right:21px;top:14px;color:#e5c4b4;font-size:37px;transform:rotate(18deg);pointer-events:none}
+.paper .date{display:block;color:#9fa694;font-size:12px;letter-spacing:.04em;margin-bottom:17px}
+.paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:2;letter-spacing:-.026em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 20px;opacity:0;transform:translateY(10px)}
+.paper p.dear{font-size:clamp(21px,5.2vw,26px);line-height:1.5;color:#617b63;font-weight:800;margin-bottom:24px}
+#open:checked ~ main .paper p{animation:lineIn .6s ease forwards;animation-delay:calc(.18s + var(--n)*.17s)}
+.paper p.sign{text-align:right;font-weight:700;color:#748972;margin-bottom:0;padding-top:6px}
+.footer{margin:23px 0 17px;font-size:13px;line-height:1.8;color:#93a08a}
+.back{display:inline-block;border:1px solid #bfcebd;border-radius:999px;padding:10px 19px;color:#6c896f;font-weight:700;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.back:active{background:#edf4ea}
+.petals{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.petals span{position:absolute;top:-24px;left:var(--x);width:12px;height:21px;border-radius:90% 15% 90% 15%;background:var(--tone);transform:rotate(20deg);opacity:0}
+#open:checked ~ .petals span{animation:fall var(--duration) ease-in var(--delay) 1 forwards}
+@keyframes sway{50%{transform:rotate(3deg)}}
+@keyframes arrive{from{opacity:0;transform:translateY(23px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineIn{to{opacity:1;transform:translateY(0)}}
+@keyframes fall{0%{opacity:0;transform:translateY(-30px) translateX(0) rotate(0)}15%{opacity:.8}85%{opacity:.65}100%{opacity:0;transform:translateY(110vh) translateX(75px) rotate(310deg)}}
+@media(max-width:420px){main{padding:25px 15px 35px}.flower-art{height:202px}.flower-art svg{width:216px;height:198px}.paper{padding-top:34px}.paper p{margin-bottom:17px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}.paper p{opacity:1;transform:none}.petals{display:none}}
+</style>
+</head>
+<body>
+<!-- This personal letter page is independent of the existing /formal/ letterbox. No scripts, tracking, or external assets. -->
+<input class="toggle" type="checkbox" id="open" aria-label="편지 열고 닫기">
+<main>
+<section class="scene cover" aria-label="새 편지가 도착했어요">
+<p class="kicker">A LITTLE LETTER FOR YOU · 01</p>
+<h1>꽃보다 먼저<br>전하고 싶은 말이 있어 🌷</h1>
+<p class="subtitle">아직 남은 꽃들이 잘 전해지기를 바라며<br>너에게 작은 편지를 남겼어</p>
+<div class="flower-art" aria-hidden="true">
+<svg viewBox="0 0 260 244" xmlns="http://www.w3.org/2000/svg">
+<path class="stem" d="M124 105 Q118 156 133 214"/>
+<path class="stem" d="M177 132 Q170 176 135 210"/>
+<path class="stem" d="M73 132 Q96 169 130 213"/>
+<path class="leaf" d="M125 176 Q81 142 74 172 Q98 194 127 190Z"/>
+<path class="leaf" d="M138 187 Q172 148 188 171 Q170 199 138 201Z"/>
+<path class="leaf" d="M109 165 Q77 126 63 151 Q74 175 115 180Z"/>
+<g transform="translate(122 79)">
+<ellipse class="petal" rx="17" ry="35" transform="rotate(0) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(45) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(90) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(135) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(180) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(225) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(270) translate(0 -33)"/>
+<ellipse class="petal" rx="17" ry="35" transform="rotate(315) translate(0 -33)"/>
+<circle class="center" r="23"/><circle cx="-5" cy="-4" r="3" fill="#f9dba1"/><circle cx="7" cy="6" r="2.5" fill="#f9dba1"/>
+</g>
+<g transform="translate(183 112) scale(.57)">
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(0) translate(0 -30)"/>
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(60) translate(0 -30)"/>
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(120) translate(0 -30)"/>
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(180) translate(0 -30)"/>
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(240) translate(0 -30)"/>
+<ellipse fill="#efd5d8" rx="19" ry="36" transform="rotate(300) translate(0 -30)"/>
+<circle fill="#edc588" r="20"/>
+</g>
+<g transform="translate(69 126) scale(.50)">
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(0) translate(0 -30)"/>
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(60) translate(0 -30)"/>
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(120) translate(0 -30)"/>
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(180) translate(0 -30)"/>
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(240) translate(0 -30)"/>
+<ellipse fill="#f6e6bb" rx="19" ry="36" transform="rotate(300) translate(0 -30)"/>
+<circle fill="#edc588" r="20"/>
+</g>
+<path class="wrap" d="M81 178 L132 233 L177 178 Q137 194 81 178Z"/>
+<path d="M105 200 L152 201" stroke="#deacaa" stroke-width="5" stroke-linecap="round"/>
+<path d="M130 208 C116 189 106 211 129 217 C151 211 144 192 130 208" fill="#d48d9c"/>
+</svg>
+</div>
+<label class="button" for="open">💌 편지 열어보기</label>
+<p class="hint">눌러서 첫 번째 편지를 읽어봐</p>
+<p class="note-tag">이 편지함에 앞으로의 이야기도 하나씩 쌓아둘게 🌱</p>
+</section>
+<section class="scene letter" aria-label="첫 번째 응원 편지">
+<p class="letter-kicker">FROM ME, TO YOU · FIRST LETTER</p>
+<article class="paper">
+<span class="date">2026.10.18 · 첫 번째 편지 🌷</span>
+<p class="dear" style="--n:0">오늘도 고생 많았어!</p>
+<p style="--n:1">요즘 시험 준비하느라 바쁠 텐데 꽃 나눔 행사까지 챙기려면 신경 쓸 일이 많지? 아직 꽃을 전부 나눠준 건 아니지만 지금까지 준비한 것도 그렇고 하나씩 진행하고 있는 것도 정말 고생 많았어</p>
+<p style="--n:2">남은 꽃들도 받는 분들한테 잘 전달됐으면 좋겠고 준비한 만큼 행사도 무사히 마무리됐으면 좋겠다 ㅎㅎ 꽃 받으시는 분들도 분명 기분 좋아하실 것 같아</p>
+<p style="--n:3">그리고 이번에 내가 만들어준 웹페이지 잘 써줘서 고마워! 사실 내가 만든 걸 누군가 실제로 사용해준다는 게 생각보다 되게 기분 좋은 일이더라 필요한 곳에 도움이 됐다는 게 뿌듯하기도 했고 ㅋㅋ 쓰면서 불편한 점이 생기면 언제든 편하게 말해줘 같이 해결해보자</p>
+<p style="--n:4">무엇보다 지금은 시험기간이니까 행사 챙기느라 네 공부나 쉬는 시간까지 너무 많이 줄이지는 않았으면 좋겠어 시험도 파이팅하고 남은 꽃 전달도 잘 마무리하길 바랄게! 요즘 이것저것 하느라 정말 고생 많고 밥 잘 챙겨 먹으면서 해 😊</p>
+<p class="sign" style="--n:5">— 동석이가 🌷</p>
+</article>
+<p class="footer">시험도 꽃 나눔도 잘 마무리되길 바랄게 🍀</p>
+<label for="open" class="back">← 편지 다시 접기</label>
+</section>
+</main>
+<div class="petals" aria-hidden="true">
+<span style="--x:8%;--tone:#ebc9cc;--delay:0s;--duration:5s"></span>
+<span style="--x:21%;--tone:#f6dfb5;--delay:.4s;--duration:5.6s"></span>
+<span style="--x:37%;--tone:#fff2de;--delay:.2s;--duration:4.8s"></span>
+<span style="--x:56%;--tone:#e4bccc;--delay:.8s;--duration:5.4s"></span>
+<span style="--x:74%;--tone:#f0d7ba;--delay:.3s;--duration:5.2s"></span>
+<span style="--x:88%;--tone:#e8c6c7;--delay:1s;--duration:6s"></span>
+<span style="--x:46%;--tone:#e4e9d5;--delay:1.5s;--duration:5.4s"></span>
+</div>
+</body>
+</html>
