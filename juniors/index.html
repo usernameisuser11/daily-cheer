@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff1ed">
-<meta name="description" content="후배들에게 전하는 월요일 밤의 새 응원과 지난 편지를 담은 편지함">
+<meta name="description" content="후배들에게 전하는 10월 20일 새 편지와 이전 편지들을 담은 편지함">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="후배들에게 보내는 편지함 💌">
-<meta property="og:description" content="10월 19일 새 편지와 10월 18일 지난 편지를 함께 볼 수 있어">
+<meta property="og:description" content="10월 20일 새 편지와 지난 두 편지를 함께 볼 수 있어">
 <title>후배들에게 보내는 편지함 💌 | 하루 마무리 응원</title>
 <style>
 :root{color-scheme:light;--ink:#57464f;--rose:#bb6982}
@@ -38,16 +38,16 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 .choice-cta{font-size:13px;font-weight:800;color:#bb6984;margin-top:4px}
 .hint{font-size:12px;color:#aa9195;margin:18px 0 0}
 .letter-scene{display:none}
-:is(#letter-1019,#letter-1018):checked ~ main{align-items:flex-start}
-:is(#letter-1019,#letter-1018):checked ~ main .intro{display:none}
-#letter-1019:checked ~ main .letter-scene-1019,#letter-1018:checked ~ main .letter-scene-1018{display:block;animation:appear .7s both}
+:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main{align-items:flex-start}
+:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main .intro{display:none}
+#letter-1020:checked ~ main .letter-scene-1020,#letter-1019:checked ~ main .letter-scene-1019,#letter-1018:checked ~ main .letter-scene-1018{display:block;animation:appear .7s both}
 .letter-top{font-size:13px;letter-spacing:.1em;font-weight:800;color:#bb758d;margin:5px 0 19px}
 .paper{position:relative;padding:31px clamp(23px,6vw,39px) 33px;border:1px solid #f1d6ce;border-radius:20px;background:linear-gradient(150deg,#fffefc,#fff9f5);box-shadow:0 22px 60px #aa7f8438,0 2px 6px #dcb9b333;text-align:left;overflow:hidden}
 .paper:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(#e3a9aa,#f6cdb7)}
 .paper:after{content:"✿";position:absolute;right:20px;top:10px;font-size:39px;color:#efd0c8;transform:rotate(-16deg);pointer-events:none}
 .paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:1.95;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 17px;opacity:0;transform:translateY(12px)}
 .paper p.dear{font-size:clamp(22px,5.3vw,27px);line-height:1.5;font-weight:800;color:#bf657a;margin-bottom:23px}
-:is(#letter-1019,#letter-1018):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
+:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
 .signature{text-align:right!important;color:#bd7488;font-weight:700;margin:21px 0 0!important}
 .foot{margin:23px 0 14px;color:#ac8e98;font-size:13px}
 .back{display:inline-block;padding:11px 20px;color:#a47484;border:1px solid #ddaeb7;border-radius:100px;font-size:13px;cursor:pointer}
@@ -61,6 +61,7 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <body>
 <!-- Separate junior mailbox; older existing sites remain unchanged. -->
 <input type="radio" class="switch" name="letter" id="home" checked aria-label="편지 목록">
+<input type="radio" class="switch" name="letter" id="letter-1020" aria-label="10월 20일 편지">
 <input type="radio" class="switch" name="letter" id="letter-1019" aria-label="10월 19일 편지">
 <input type="radio" class="switch" name="letter" id="letter-1018" aria-label="10월 18일 편지">
 <main>
@@ -70,10 +71,21 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <p class="subtitle">후배들에게 남기는 하루 마무리 이야기<br>읽고 싶은 편지를 열어봐</p>
 <div class="envelope-wrap" aria-hidden="true"><div class="envelope"><div class="letter-peek"></div><div class="flap"></div><div class="seal">♥</div></div></div>
 <div class="letter-choices" aria-label="편지 목록">
-<label for="letter-1019" class="choice"><span class="choice-date">NEW · 2026.10.19</span><span class="choice-title">💌 월요일 밤에 전하는 응원</span><span class="choice-desc">조금씩 다시 이해해 가며 보낸 공부 이야기</span><span class="choice-cta">새 편지 열어보기 →</span></label>
+<label for="letter-1020" class="choice"><span class="choice-date">NEW · 2026.10.20</span><span class="choice-title">💌 바쁘게 지나간 화요일 밤</span><span class="choice-desc">시험 과제를 마무리하고 내일을 준비하면서</span><span class="choice-cta">새 편지 열어보기 →</span></label>
+<label for="letter-1019" class="choice"><span class="choice-date">2026.10.19 · 지난 편지</span><span class="choice-title">💌 월요일 밤에 전하는 응원</span><span class="choice-desc">조금씩 다시 이해해 가며 보낸 공부 이야기</span><span class="choice-cta">새 편지 열어보기 →</span></label>
 <label for="letter-1018" class="choice"><span class="choice-date">2026.10.18 · 지난 편지</span><span class="choice-title">💌 공부가 마음처럼 안 됐던 일요일</span><span class="choice-desc">열심히 했지만 헷갈렸던 하루 그리고 내일 다시 해보려는 마음</span><span class="choice-cta">편지 열어보기 →</span></label>
 </div>
 <p class="hint">이 편지함에 앞으로의 편지도 차곡차곡 남겨둘게 ✨</p>
+</section>
+<section class="scene letter-scene letter-scene-1020" aria-label="후배들에게 보내는 10월 20일 편지">
+<p class="letter-top">20 OCT 2026 · TO. 후배들 · FROM. 동석 🌙</p>
+<article class="paper">
+<p class="dear" style="--n:0">오늘도 다들 정말 고생 많았어 😊</p>
+<p style="--n:1">오늘도 다들 정말 고생 많았어 😊 벌써 화요일 밤이네 다들 오늘 하루는 잘 보냈어? 나는 오늘 유닉스 프로그래밍 시험 과제 때문에 코드를 작성하고 실행 결과를 캡처하면서 정신없이 하루를 보냈어 제출 시간에 맞추려고 이것저것 확인하다 보니까 마음도 급해지고 생각보다 쉽지 않더라 게다가 내일은 LLM 프로그래밍 시험도 있어서 아직 공부해야 할 게 남아 있는데 시간이 정말 빠르게 지나가는 것 같아 그래도 지금까지 준비한 게 있으니까 남은 시간 동안 할 수 있는 만큼 최선을 다해보려고 해 너희도 요즘 시험 기간이라 바쁘고 정신없을 텐데 공부는 잘되고 있어? 열심히 공부했는데도 막상 문제를 보면 기억이 안 나거나 생각했던 만큼 진도가 나가지 않아서 답답할 때도 있잖아 나도 요즘 그런 순간이 많아 그래도 지금까지 해온 걸 생각하면서 조금만 더 힘내보자 너무 완벽하게 하려고 부담 갖기보다는 부족한 부분을 하나씩 채워가는 게 중요한 것 같아 그리고 시험 준비한다고 밥 거르거나 잠까지 줄여가면서 너무 무리하지는 않았으면 좋겠어 나도 요즘 시간이 부족하다는 생각이 많이 들지만 건강까지 챙기지 못하면 오히려 더 힘들어지니까 우리 서로 잘 챙기면서 공부하자 혹시 오늘 계획했던 걸 다 끝내지 못했더라도 너무 자책하지 말고 내일 다시 이어서 해보자 오늘 하루도 각자 자리에서 정말 고생 많았어 남은 밤은 너무 늦지 않게 마무리하고 편안하게 쉬었으면 좋겠다 내일 시험 보는 친구들도 준비한 만큼 잘 풀고 왔으면 좋겠어 다들 푹 자고 내일도 같이 힘내자 좋은 밤 보내 😊</p>
+<p class="signature" style="--n:2">— 동석이가 🌙</p>
+</article>
+<p class="foot">오늘 하루도 고생 많았어 내일도 힘내자 🌙</p>
+<label for="home" class="back">← 편지 목록으로</label>
 </section>
 <section class="scene letter-scene letter-scene-1019" aria-label="후배들에게 보내는 10월 19일 편지">
 <p class="letter-top">19 OCT 2026 · TO. 후배들 · FROM. 동석 🌙</p>
