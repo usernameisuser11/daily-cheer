@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#f2ede7" />
+<meta name="description" content="격자 내부 선으로 꽃의 윤곽을 그린 종이와 한지 감성의 편지지 종지" />
+<title>종지 — 격자 속 꽃 편지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{--page:#efe9df;--page-bottom:#e7ded1;--paper:#fbf6ea;--ink:#38302e;--muted:#887b73;--rule:#e6dcd0;--letter-size:17px;--title-font:'Noto Serif KR','Gowun Batang',serif;--serif:'Gowun Batang','Noto Serif KR',serif;--sans:'DM Sans',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-width:320px;min-height:100svh;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;background:radial-gradient(ellipse 75% 70% at 9% 10%,#fff7e9 0,transparent 65%),radial-gradient(ellipse 80% 55% at 95% 12%,#efe3e7 0,transparent 65%),linear-gradient(155deg,var(--page),var(--page-bottom))}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.19'/%3E%3C/svg%3E")}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid #91758c;outline-offset:3px}
+.site{position:relative;width:min(100% - 48px,820px);margin:0 auto;padding:22px 0 58px}
+.toolbar{min-height:55px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:14px;color:#625650;letter-spacing:.045em}
+.brand-seal{height:30px;width:30px;display:grid;place-items:center;border:1px solid rgba(127,101,88,.38);background:#f7efe2;color:#9b7d80;font-size:15px}
+.actions{display:flex;align-items:center;gap:9px}
+.action{border:1px solid rgba(160,138,140,.32);border-radius:30px;background:rgba(255,255,255,.27);color:#807070;padding:8px 13px;font-family:var(--sans);font-size:11px;letter-spacing:.025em;transition:background .2s}.action:hover{background:rgba(255,255,255,.72)}
+.paper-wrap{position:relative;isolation:isolate}.paper-wrap::before{content:"";position:absolute;inset:5% 1% -2%;z-index:-1;box-shadow:0 25px 62px 12px rgba(74,51,51,.11);border-radius:3px}
+.paper{position:relative;background-image:linear-gradient(112deg,rgba(255,253,247,.60),rgba(250,245,233,.32) 48%,rgba(247,239,226,.68)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)' opacity='0.06'/%3E%3C/svg%3E"),linear-gradient(135deg,#fffdf8,#faf4ea 55%,#f6efe4);min-height:870px;border:1px solid rgba(193,176,159,.74);box-shadow:inset 0 0 0 10px rgba(255,251,242,.45),inset 0 0 0 11px rgba(255,249,239,.18),inset 0 0 0 12px rgba(159,126,98,.07),0 18px 37px rgba(87,69,65,.10);overflow:hidden}
+.paper::before{content:"";position:absolute;z-index:0;inset:-12%;pointer-events:none;background:linear-gradient(122deg,rgba(255,254,247,.72) 1%,rgba(255,253,235,.22) 20%,rgba(255,255,255,0) 50%,rgba(255,243,213,.07) 78%,transparent 89%);transform:translateX(-7%);animation:daylight 27s ease-in-out infinite alternate}.paper::after{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background:radial-gradient(ellipse 48% 35% at 4% 4%,rgba(255,255,235,.24),transparent 75%)}
+@keyframes daylight{0%{transform:translateX(-7%)}100%{transform:translateX(4%)}}
+.paper-inner{position:relative;z-index:1;max-width:670px;margin:0 auto;padding:47px 46px 55px}
+.letter-kicker{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:27px;color:var(--muted);font-family:var(--sans);font-size:10px;letter-spacing:.15em}.letter-kicker .divider{flex:1;height:1px;background:linear-gradient(90deg,#ded2d4,#f5eeea);margin:0 8px}
+.intro{display:grid;grid-template-columns:minmax(0,235px) minmax(0,1fr);gap:29px;align-items:center}
+.lattice-frame{position:relative;width:100%;aspect-ratio:1/1;background:linear-gradient(130deg,#fffaf3,#f5ebe5);border:1px solid rgba(164,144,125,.42);box-shadow:inset 0 0 18px rgba(181,157,170,.10),0 8px 28px rgba(129,106,117,.08);overflow:hidden}
+.lattice-frame::before{content:"";position:absolute;inset:-20%;pointer-events:none;background:linear-gradient(125deg,rgba(255,255,255,.82) 12%,rgba(255,246,225,.28) 34%,rgba(255,255,255,0) 56%,rgba(227,205,216,.10) 76%,transparent 84%);transform:translateX(-5%);animation:windowlight 20s ease-in-out infinite alternate;opacity:.55}.lattice-frame::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 24px rgba(170,139,143,.06),inset 0 0 0 8px rgba(255,252,245,.22)}
+@keyframes windowlight{to{transform:translateX(9%)}}
+.lattice-svg{position:absolute;inset:0;width:100%;height:100%;opacity:.96}
+.window-beam{position:absolute;inset:0;pointer-events:none;background:linear-gradient(128deg,rgba(255,255,250,.24) 10%,transparent 47%,rgba(238,217,224,.05) 80%);mix-blend-mode:screen;opacity:.45}
+.intro-text{min-width:0;position:relative}.to{color:#9f828c;margin:0 0 15px;font-family:var(--sans);font-size:11px;letter-spacing:.20em;text-transform:uppercase}
+h1{font-family:var(--title-font);font-weight:500;letter-spacing:-.095em;font-size:clamp(28px,4.25vw,39px);line-height:1.57;margin:0;color:#4b3941;word-break:keep-all}.subtitle{color:#aa929a;font-size:13px;line-height:1.9;letter-spacing:-.025em;margin:20px 0 0}
+.sep{margin:38px 0 30px;height:1px;background:linear-gradient(90deg,rgba(178,157,162,.12),rgba(178,157,162,.67) 48%,rgba(178,157,162,.12))}.date-line{font-family:var(--sans);letter-spacing:.17em;color:#a28f90;font-size:10px;display:flex;justify-content:space-between;gap:10px;margin:0 0 22px}
+.body{font-family:var(--serif);font-size:var(--letter-size);line-height:2.05;word-break:keep-all;letter-spacing:-.027em;color:#4f453d}.body p{margin:0 0 14px}.body p:last-child{margin-bottom:0}.signoff{margin-top:45px;display:flex;align-items:flex-end;justify-content:space-between;gap:30px}.closing{font-size:14px;line-height:2;color:#99867e}.signature{margin-top:10px;font-size:18px;letter-spacing:-.035em;color:#75616d}
+.footer-art{width:63px;height:63px;opacity:.51;transform:rotate(-13deg)}.paper-footer{margin-top:37px;padding-top:21px;border-top:1px solid #e8ded1;display:flex;justify-content:space-between;gap:8px;color:#b2a29d;font-family:var(--sans);font-size:10px;letter-spacing:.13em}.bottom-note{text-align:center;color:#a0948c;font-size:11px;margin-top:23px;letter-spacing:.08em}
+@media(max-width:620px){.site{width:calc(100% - 24px);padding:9px 0 36px}.toolbar{margin-bottom:10px}.brand{font-size:11px}.brand-seal{width:27px;height:27px}.actions{gap:5px}.action{padding:8px 10px;font-size:10px}.paper-inner{padding:30px 22px 35px}.letter-kicker{font-size:8px;margin-bottom:21px}.intro{grid-template-columns:minmax(0,42%) minmax(0,1fr);gap:16px}.to{font-size:9px;letter-spacing:.12em;margin-bottom:7px}h1{font-size:clamp(20px,5.5vw,31px);line-height:1.47}.subtitle{font-size:11px;margin-top:11px;line-height:1.65}.sep{margin:26px 0 22px}.body{font-size:calc(var(--letter-size) - 1px);line-height:2.0}.date-line{font-size:9px}.paper-footer{font-size:9px}}
+@media(max-width:370px){.intro{gap:12px}.paper-inner{padding:28px 18px 32px}.subtitle{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.paper::before,.lattice-frame::before{animation:none}}
+@media print{.toolbar,.bottom-note{display:none}.site{padding:0;width:100%}.paper{box-shadow:none;border:0}.paper-inner{padding:36px 48px}.paper-wrap::before{display:none}}
+</style>
+</head>
+<body>
+<main class="site">
+  <nav class="toolbar" aria-label="편지 보기 설정">
+    <div class="brand"><span class="brand-seal" aria-hidden="true">▦</span><span>종지 <span aria-hidden="true">·</span> PAPER × HANJI</span></div>
+    <div class="actions"><button type="button" class="action" id="smaller" aria-label="편지 글자 작게">A−</button><button type="button" class="action" id="larger" aria-label="편지 글자 크게">A+</button></div>
+  </nav>
+  <div class="paper-wrap"><article class="paper" aria-label="편지">
+    <div class="paper-inner">
+      <div class="letter-kicker"><span>JONGJI · PAPER & HANJI</span><span class="divider"></span><span>THANK YOU</span></div>
+      <header class="intro">
+        <div class="lattice-frame">
+          <svg class="lattice-svg" viewBox="0 0 320 320" role="img" aria-label="격자 안 선으로 꽃의 테두리를 만든 한지 문양" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sunPass" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#fffef8" stop-opacity=".95"/>
+                <stop offset=".34" stop-color="#fff9e6" stop-opacity=".52"/>
+                <stop offset=".74" stop-color="#eddbe4" stop-opacity=".10"/>
+                <stop offset="1" stop-color="#dfd4dc" stop-opacity=".14"/>
+              </linearGradient>
+              <filter id="softBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.4"/></filter>
+              <filter id="tinyNoise" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence baseFrequency=".09" numOctaves="2" seed="7" result="n"/>
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/>
+              </filter>
+            </defs>
+            <rect width="320" height="320" fill="#f8f1e4"/>
+            <path d="M0 0 H212 L0 272 Z" fill="url(#sunPass)" opacity=".88"/>
+            <ellipse cx="134" cy="120" rx="150" ry="150" fill="#fffdf6" opacity=".18" filter="url(#softBlur)"/>
+
+            <!-- 뒷면 잔상 격자 -->
+            <g stroke="#a49498" stroke-opacity=".15" stroke-width="1" fill="none">
+              <path d="M20 20V300M55 20V300M90 20V300M125 20V300M160 20V300M195 20V300M230 20V300M265 20V300M300 20V300"/>
+              <path d="M20 20H300M20 55H300M20 90H300M20 125H300M20 160H300M20 195H300M20 230H300M20 265H300M20 300H300"/>
+            </g>
+
+            <!-- 꽃 테두리: 격자 내부의 직선/대각선으로 형성 -->
+            <g filter="url(#tinyNoise)">
+              <!-- 은은한 꽃 중심 발광 -->
+              <circle cx="160" cy="152" r="44" fill="#f4dfe2" opacity=".34" filter="url(#softBlur)"/>
+              <circle cx="160" cy="152" r="14" fill="#d8b8b1" opacity=".42"/>
+
+              <!-- 위 꽃잎 -->
+              <path d="M160 152 L142 125 L142 90 L160 72 L178 90 L178 125 Z" fill="none" stroke="#876d77" stroke-opacity=".76" stroke-width="1.65" stroke-linejoin="miter"/>
+              <path d="M160 72 L160 90 M142 90 L160 108 L178 90 M142 125 L160 125 L178 125" fill="none" stroke="#b28f97" stroke-opacity=".48" stroke-width="1.05"/>
+
+              <!-- 오른쪽 위 꽃잎 -->
+              <path d="M160 152 L195 142 L230 142 L248 160 L230 178 L195 178 Z" fill="none" stroke="#876d77" stroke-opacity=".76" stroke-width="1.65"/>
+              <path d="M230 142 L212 160 L230 178 M195 142 L195 160 L195 178 M160 152 L195 160" fill="none" stroke="#b28f97" stroke-opacity=".48" stroke-width="1.05"/>
+
+              <!-- 오른쪽 아래 꽃잎 -->
+              <path d="M160 152 L178 178 L178 213 L160 230 L142 213 L142 178 Z" fill="none" stroke="#876d77" stroke-opacity=".76" stroke-width="1.65"/>
+              <path d="M160 230 L160 213 M142 213 L160 195 L178 213 M142 178 L160 178 L178 178" fill="none" stroke="#b28f97" stroke-opacity=".48" stroke-width="1.05"/>
+
+              <!-- 왼쪽 아래 꽃잎 -->
+              <path d="M160 152 L125 178 L90 178 L72 160 L90 142 L125 142 Z" fill="none" stroke="#876d77" stroke-opacity=".76" stroke-width="1.65"/>
+              <path d="M90 142 L108 160 L90 178 M125 142 L125 160 L125 178 M160 152 L125 160" fill="none" stroke="#b28f97" stroke-opacity=".48" stroke-width="1.05"/>
+
+              <!-- 대각 꽃잎 보조 윤곽 -->
+              <path d="M160 152 L178 125 L213 108 L230 125 L213 142 L186 142 Z" fill="none" stroke="#8f7780" stroke-opacity=".56" stroke-width="1.15"/>
+              <path d="M160 152 L186 178 L213 195 L230 178 L213 160 L178 160 Z" fill="none" stroke="#8f7780" stroke-opacity=".56" stroke-width="1.15"/>
+              <path d="M160 152 L142 178 L108 195 L90 178 L108 160 L142 160 Z" fill="none" stroke="#8f7780" stroke-opacity=".56" stroke-width="1.15"/>
+              <path d="M160 152 L142 125 L108 108 L90 125 L108 142 L142 142 Z" fill="none" stroke="#8f7780" stroke-opacity=".56" stroke-width="1.15"/>
+
+            </g>
+
+            <!-- 앞쪽 격자 -->
+            <g>
+              <path d="M20 20V300M55 20V300M90 20V300M125 20V300M160 20V300M195 20V300M230 20V300M265 20V300M300 20V300" stroke="#6c6269" stroke-opacity=".11" stroke-width="2.8" fill="none" transform="translate(1.4 1.4)"/>
+              <path d="M20 20H300M20 55H300M20 90H300M20 125H300M20 160H300M20 195H300M20 230H300M20 265H300M20 300H300" stroke="#6c6269" stroke-opacity=".10" stroke-width="2.8" fill="none" transform="translate(1.4 1.4)"/>
+              <path d="M20 20V300M55 20V300M90 20V300M125 20V300M160 20V300M195 20V300M230 20V300M265 20V300M300 20V300" stroke="#766772" stroke-opacity=".60" stroke-width="1.35" fill="none"/>
+              <path d="M20 20H300M20 55H300M20 90H300M20 125H300M20 160H300M20 195H300M20 230H300M20 265H300M20 300H300" stroke="#766772" stroke-opacity=".60" stroke-width="1.35" fill="none"/>
+              <rect x="15.5" y="15.5" width="289" height="289" fill="none" stroke="#a18b97" stroke-opacity=".72" stroke-width="1.3"/>
+            </g>
+            <path d="M0 0H320V320H0Z" fill="none" stroke="#d9cacc" stroke-opacity=".66" stroke-width="2"/>
+          </svg>
+          <div class="window-beam" aria-hidden="true"></div>
+        </div>
+        <div class="intro-text">
+          <h1>종지</h1>
+          <p class="subtitle">종이와 한지에서 따온 말</p>
+        </div>
+      </header>
+      <div class="sep" aria-hidden="true"></div>
+      <div class="date-line"><span>A NOTE OF THANKS</span><time datetime="2026-10-21">2026. 10. 21.</time></div>
+      <div class="body">
+        <p>안녕하세요! 예전에 ‘겹빛’을 처음 봤을 때 격자 사이로 스며드는 빛이 참 인상 깊었어요. 당시에는 시간이 맞지 않아 설명을 듣지 못해 아쉬웠는데, 오늘 카페에서 우연히 뵙고 알아본 순간 반가운 마음에 먼저 말을 걸게 됐습니다.</p>
+        <p>갑작스러운 인사였는데도 바쁘신 와중에 잠깐 시간을 내어 작품을 설명해 주셔서 정말 감사했습니다. 덕분에 오래 기억하고 있던 작품을 조금 더 깊이 이해할 수 있었어요.</p>
+        <p>그 감사한 마음을 전하고 싶어 ‘겹빛’에서 받았던 인상을 저만의 방식으로 담아 작은 편지지를 만들어 봤습니다. 원작과는 다르지만 작품이 주었던 조용한 빛의 분위기를 표현하고 싶었어요. 앞으로 하시는 디자인 작업도 모두 잘 풀리시고, 멋진 작품을 계속 만들어 가시길 진심으로 응원하겠습니다. 오늘 정말 감사했습니다!</p>
+      </div>
+      <div class="signoff">
+        <div><div class="closing">감사한 마음을 담아</div><div class="signature">동석 드림</div></div>
+        <svg class="footer-art" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#ad8c9e" stroke-width="1.3"><rect x="7" y="7" width="86" height="86"/><path d="M7 50H93M50 7V93"/><path d="M32 50L50 32L68 50L50 68Z"/><circle cx="50" cy="50" r="8"/></g></svg>
+      </div>
+      <div class="paper-footer"><span>JONGJI · HANJI LETTER</span><span>✧</span><span>ONE LETTER, ONE MOMENT</span></div>
+    </div>
+  </article></div>
+
+</main>
+<script>
+const root=document.documentElement;
+const decrease=document.getElementById('smaller'),increase=document.getElementById('larger');
+let size=17;
+function changeSize(delta){size=Math.max(15,Math.min(23,size+delta));root.style.setProperty('--letter-size',size+'px');decrease.disabled=size<=15;increase.disabled=size>=23;}
+decrease.addEventListener('click',()=>changeSize(-1));increase.addEventListener('click',()=>changeSize(1));changeSize(0);
+</script>
+</body>
+</html>
