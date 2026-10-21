@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff1ed">
-<meta name="description" content="후배들에게 전하는 10월 20일 새 편지와 이전 편지들을 담은 편지함">
+<meta name="description" content="후배들에게 전하는 10월 21일 새 편지와 이전 편지들을 담은 편지함">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="후배들에게 보내는 편지함 💌">
-<meta property="og:description" content="10월 20일 새 편지와 지난 두 편지를 함께 볼 수 있어">
+<meta property="og:description" content="10월 21일 새 편지와 지난 세 편지를 함께 볼 수 있어">
 <title>후배들에게 보내는 편지함 💌 | 하루 마무리 응원</title>
 <style>
 :root{color-scheme:light;--ink:#57464f;--rose:#bb6982}
@@ -38,16 +38,16 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 .choice-cta{font-size:13px;font-weight:800;color:#bb6984;margin-top:4px}
 .hint{font-size:12px;color:#aa9195;margin:18px 0 0}
 .letter-scene{display:none}
-:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main{align-items:flex-start}
-:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main .intro{display:none}
-#letter-1020:checked ~ main .letter-scene-1020,#letter-1019:checked ~ main .letter-scene-1019,#letter-1018:checked ~ main .letter-scene-1018{display:block;animation:appear .7s both}
+:is(#letter-1021,#letter-1020,#letter-1019,#letter-1018):checked ~ main{align-items:flex-start}
+:is(#letter-1021,#letter-1020,#letter-1019,#letter-1018):checked ~ main .intro{display:none}
+#letter-1021:checked ~ main .letter-scene-1021,#letter-1020:checked ~ main .letter-scene-1020,#letter-1019:checked ~ main .letter-scene-1019,#letter-1018:checked ~ main .letter-scene-1018{display:block;animation:appear .7s both}
 .letter-top{font-size:13px;letter-spacing:.1em;font-weight:800;color:#bb758d;margin:5px 0 19px}
 .paper{position:relative;padding:31px clamp(23px,6vw,39px) 33px;border:1px solid #f1d6ce;border-radius:20px;background:linear-gradient(150deg,#fffefc,#fff9f5);box-shadow:0 22px 60px #aa7f8438,0 2px 6px #dcb9b333;text-align:left;overflow:hidden}
 .paper:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(#e3a9aa,#f6cdb7)}
 .paper:after{content:"✿";position:absolute;right:20px;top:10px;font-size:39px;color:#efd0c8;transform:rotate(-16deg);pointer-events:none}
 .paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:1.95;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 17px;opacity:0;transform:translateY(12px)}
 .paper p.dear{font-size:clamp(22px,5.3vw,27px);line-height:1.5;font-weight:800;color:#bf657a;margin-bottom:23px}
-:is(#letter-1020,#letter-1019,#letter-1018):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
+:is(#letter-1021,#letter-1020,#letter-1019,#letter-1018):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
 .signature{text-align:right!important;color:#bd7488;font-weight:700;margin:21px 0 0!important}
 .foot{margin:23px 0 14px;color:#ac8e98;font-size:13px}
 .back{display:inline-block;padding:11px 20px;color:#a47484;border:1px solid #ddaeb7;border-radius:100px;font-size:13px;cursor:pointer}
@@ -61,6 +61,7 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <body>
 <!-- Separate junior mailbox; older existing sites remain unchanged. -->
 <input type="radio" class="switch" name="letter" id="home" checked aria-label="편지 목록">
+<input type="radio" class="switch" name="letter" id="letter-1021" aria-label="10월 21일 편지">
 <input type="radio" class="switch" name="letter" id="letter-1020" aria-label="10월 20일 편지">
 <input type="radio" class="switch" name="letter" id="letter-1019" aria-label="10월 19일 편지">
 <input type="radio" class="switch" name="letter" id="letter-1018" aria-label="10월 18일 편지">
@@ -71,11 +72,22 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <p class="subtitle">후배들에게 남기는 하루 마무리 이야기<br>읽고 싶은 편지를 열어봐</p>
 <div class="envelope-wrap" aria-hidden="true"><div class="envelope"><div class="letter-peek"></div><div class="flap"></div><div class="seal">♥</div></div></div>
 <div class="letter-choices" aria-label="편지 목록">
-<label for="letter-1020" class="choice"><span class="choice-date">NEW · 2026.10.20</span><span class="choice-title">💌 바쁘게 지나간 화요일 밤</span><span class="choice-desc">시험 과제를 마무리하고 내일을 준비하면서</span><span class="choice-cta">새 편지 열어보기 →</span></label>
+<label for="letter-1021" class="choice"><span class="choice-date">NEW · 2026.10.21</span><span class="choice-title">💌 시험을 마친 수요일 밤</span><span class="choice-desc">LLM 중간고사를 보고 남은 시험을 준비하는 이야기</span><span class="choice-cta">새 편지 열어보기 →</span></label>
+<label for="letter-1020" class="choice"><span class="choice-date">2026.10.20 · 지난 편지</span><span class="choice-title">💌 바쁘게 지나간 화요일 밤</span><span class="choice-desc">시험 과제를 마무리하고 내일을 준비하면서</span><span class="choice-cta">새 편지 열어보기 →</span></label>
 <label for="letter-1019" class="choice"><span class="choice-date">2026.10.19 · 지난 편지</span><span class="choice-title">💌 월요일 밤에 전하는 응원</span><span class="choice-desc">조금씩 다시 이해해 가며 보낸 공부 이야기</span><span class="choice-cta">새 편지 열어보기 →</span></label>
 <label for="letter-1018" class="choice"><span class="choice-date">2026.10.18 · 지난 편지</span><span class="choice-title">💌 공부가 마음처럼 안 됐던 일요일</span><span class="choice-desc">열심히 했지만 헷갈렸던 하루 그리고 내일 다시 해보려는 마음</span><span class="choice-cta">편지 열어보기 →</span></label>
 </div>
 <p class="hint">이 편지함에 앞으로의 편지도 차곡차곡 남겨둘게 ✨</p>
+</section>
+<section class="scene letter-scene letter-scene-1021" aria-label="후배들에게 보내는 10월 21일 편지">
+<p class="letter-top">21 OCT 2026 · TO. 후배들 · FROM. 동석 🌙</p>
+<article class="paper">
+<p class="dear" style="--n:0">오늘도 다들 정말 고생 많았어 😊</p>
+<p style="--n:1">오늘도 다들 정말 고생 많았어 😊 벌써 수요일 밤이네 다들 오늘 하루는 잘 보냈어? 나는 오늘 드디어 LLM 프로그래밍 중간고사를 보고 왔어 시험 전까지 계속 공부하면서도 제대로 이해하고 있는 건지 걱정이 많았는데 막상 시험을 보고 나니까 그럭저럭 본 것 같아서 조금은 마음이 놓이더라 그래도 아직 시험이 끝난 건 아니야 이번 주 일요일에는 정보처리기사 실기시험이 있어서 오늘도 문제를 풀면서 공부했고 알고리즘 과제도 다시 살펴봤어 요즘은 하나 끝내면 또 다른 할 일이 기다리고 있어서 시간이 정말 빠르게 지나가는 것 같아 너희도 이번 주 시험 때문에 많이 바쁘지? 공부하다 보면 분명 열심히 했는데도 막상 문제를 보면 생각이 안 나거나 실수해서 속상할 때가 있잖아 나도 그런 순간이 많아서 그 마음이 어떤 건지 조금은 알 것 같아 그래도 지금까지 공부했던 시간이 사라지는 건 아니니까 너무 조급하게 생각하지 않았으면 좋겠어 아직 시험이 남아 있는 친구들은 마지막까지 조금만 더 힘내고 시험을 끝낸 친구들은 그동안 고생한 만큼 푹 쉬었으면 좋겠다 그리고 아무리 바빠도 밥은 꼭 챙겨 먹고 잠도 너무 줄이지 말자 나도 남은 시험까지 잘 마무리할 수 있도록 조금만 더 노력해보려고 해 오늘 하루도 각자 자리에서 공부하고 할 일 하느라 정말 고생 많았어 남은 밤은 너무 무리하지 말고 편안하게 쉬었으면 좋겠다 내일도 우리 각자 할 수 있는 만큼 열심히 해보자 다들 좋은 밤 보내 😊</p>
+<p class="signature" style="--n:2">— 동석이가 🌙</p>
+</article>
+<p class="foot">오늘도 수고 많았어 내일도 같이 힘내자 🌙</p>
+<label for="home" class="back">← 편지 목록으로</label>
 </section>
 <section class="scene letter-scene letter-scene-1020" aria-label="후배들에게 보내는 10월 20일 편지">
 <p class="letter-top">20 OCT 2026 · TO. 후배들 · FROM. 동석 🌙</p>
