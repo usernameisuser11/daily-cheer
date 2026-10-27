@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#fff1ed">
-<meta name="description" content="익명님께 전하는 10월 26일 새 편지와 지난 일곱 통의 편지를 함께 읽어보세요">
+<meta name="description" content="익명님께 전하는 10월 27일 새 편지와 지난 일곱 통의 편지를 함께 읽어보세요">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="오늘도 고생 많으셨어요 🌙">
@@ -33,23 +33,23 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 .button:active{transform:scale(.98)}
 .hint{font-size:12px;color:#aa9195;margin:18px 0 0}
 .letter-scene{display:none}
-:is(#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main{align-items:flex-start}
-:is(#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main .intro{display:none}
-#oct26:checked ~ main .oct26-letter,#oct25:checked ~ main .oct25-letter,#oct24:checked ~ main .oct24-letter,#oct23:checked ~ main .oct23-letter,#oct22:checked ~ main .oct22-letter,#oct21:checked ~ main .oct21-letter,#oct20:checked ~ main .oct20-letter,#oct19:checked ~ main .oct19-letter,#today:checked ~ main .today-letter,#latest:checked ~ main .new-letter,#previous:checked ~ main .old-letter{display:block;animation:appear .7s both}
+:is(#oct27,#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main{align-items:flex-start}
+:is(#oct27,#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main .intro{display:none}
+#oct27:checked ~ main .oct27-letter,#oct26:checked ~ main .oct26-letter,#oct25:checked ~ main .oct25-letter,#oct24:checked ~ main .oct24-letter,#oct23:checked ~ main .oct23-letter,#oct22:checked ~ main .oct22-letter,#oct21:checked ~ main .oct21-letter,#oct20:checked ~ main .oct20-letter,#oct19:checked ~ main .oct19-letter,#today:checked ~ main .today-letter,#latest:checked ~ main .new-letter,#previous:checked ~ main .old-letter{display:block;animation:appear .7s both}
 .letter-top{font-size:13px;letter-spacing:.15em;font-weight:800;color:#bb758d;margin:5px 0 19px}
 .paper{position:relative;padding:31px clamp(23px,6vw,39px) 33px;border:1px solid #f1d6ce;border-radius:20px;background:linear-gradient(150deg,#fffefc,#fff9f5);box-shadow:0 22px 60px #aa7f8438,0 2px 6px #dcb9b333;text-align:left;overflow:hidden}
 .paper:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(#e3a9aa,#f6cdb7)}
 .paper:after{content:"✿";position:absolute;right:20px;top:10px;font-size:39px;color:#efd0c8;transform:rotate(-16deg);pointer-events:none}
 .paper p{font-size:clamp(15.5px,3.9vw,17px);line-height:1.95;letter-spacing:-.025em;word-break:keep-all;overflow-wrap:anywhere;margin:0 0 17px;opacity:0;transform:translateY(12px)}
 .paper p.dear{font-size:clamp(22px,5.3vw,27px);line-height:1.5;font-weight:800;color:#bf657a;margin-bottom:23px}
-:is(#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
+:is(#oct27,#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ main .paper p{animation:lineIn .65s ease forwards;animation-delay:calc(.25s + var(--n)*.25s)}
 .signature{text-align:right!important;color:#bd7488;font-weight:700;margin:21px 0 0!important}
 .foot{margin:23px 0 14px;color:#ac8e98;font-size:13px}
 .back{display:inline-block;padding:11px 20px;color:#a47484;border:1px solid #ddaeb7;border-radius:100px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .back:active{background:#fff6f5}
 .hearts{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .heart{position:absolute;bottom:-42px;left:var(--x);font-size:var(--size);opacity:0}
-:is(#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ .hearts .heart{animation:rise var(--duration) ease-out var(--delay) 1 both}
+:is(#oct27,#oct26,#oct25,#oct24,#oct23,#oct22,#oct21,#oct20,#oct19,#today,#latest,#previous):checked ~ .hearts .heart{animation:rise var(--duration) ease-out var(--delay) 1 both}
 @keyframes float{50%{transform:translateY(-10px)}}
 @keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 @keyframes lineIn{to{opacity:1;transform:translateY(0)}}
@@ -73,6 +73,7 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <body>
 <!-- This page works without client-side JavaScript or external assets. -->
 <input type="radio" class="switch" name="letter" id="home" checked aria-label="편지 선택 화면">
+<input type="radio" class="switch" name="letter" id="oct27" aria-label="10월 27일 열두 번째 편지">
 <input type="radio" class="switch" name="letter" id="oct26" aria-label="10월 26일 열한 번째 편지">
 <input type="radio" class="switch" name="letter" id="oct25" aria-label="10월 25일 열 번째 편지">
 <input type="radio" class="switch" name="letter" id="oct24" aria-label="10월 24일 아홉 번째 편지">
@@ -91,7 +92,8 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <p class="subtitle">익명님께 전하는 작은 이야기들이에요<br>읽고 싶은 편지를 골라주세요</p>
 <div class="envelope-wrap" aria-hidden="true"><div class="envelope"><div class="letter-peek"></div><div class="flap"></div><div class="seal">♥</div></div></div>
 <div class="letter-choices" aria-label="편지 목록">
-<label for="oct26" class="choice featured"><span class="choice-date">NEW · 2026.10.26</span><span class="choice-title">💌 시험을 마친 월요일 밤</span><span class="choice-desc">시험을 치른 하루를 응원하며</span><span class="choice-cta">열한 번째 편지 열어보기 →</span></label>
+<label for="oct27" class="choice featured"><span class="choice-date">NEW · 2026.10.27</span><span class="choice-title">💌 시험을 모두 마친 화요일 밤</span><span class="choice-desc">ExamScope 후기 감사와 시험 마무리 응원</span><span class="choice-cta">열두 번째 편지 열어보기 →</span></label>
+<label for="oct26" class="choice"><span class="choice-date">2026.10.26 · 지난 편지</span><span class="choice-title">💌 시험을 마친 월요일 밤</span><span class="choice-desc">시험을 치른 하루를 응원하며</span><span class="choice-cta">열한 번째 편지 열어보기 →</span></label>
 <label for="oct25" class="choice"><span class="choice-date">2026.10.25 · 지난 편지</span><span class="choice-title">💌 시험을 마친 일요일 밤</span><span class="choice-desc">오늘의 시험을 마치고 내일 시험을 앞둔 분께</span><span class="choice-cta">열 번째 편지 열어보기 →</span></label>
 <label for="oct24" class="choice"><span class="choice-date">2026.10.24 · 지난 편지</span><span class="choice-title">💌 시험을 마친 토요일 밤</span><span class="choice-desc">알고리즘 시험 뒤 마지막 시험을 준비하며</span><span class="choice-cta">아홉 번째 편지 열어보기 →</span></label>
 <label for="oct23" class="choice"><span class="choice-date">2026.10.23 · 지난 편지</span><span class="choice-title">💌 마음이 무거웠던 금요일 밤</span><span class="choice-desc">알고리즘과 정처기 시험을 앞두고 느낀 마음</span><span class="choice-cta">여덟 번째 편지 열어보기 →</span></label>
@@ -104,6 +106,11 @@ h1{font-size:clamp(28px,7vw,38px);line-height:1.3;letter-spacing:-.05em;color:#9
 <label for="previous" class="choice"><span class="choice-date">2026.10.12 · 지난 편지</span><span class="choice-title">🌙 오늘도 정말 고생 많으셨어요</span><span class="choice-desc">전에 전했던 응원을 그대로 남겨두었어요</span><span class="choice-cta">지난 편지 다시 읽기 →</span></label>
 </div>
 <p class="hint">여덟 편지 모두 언제든 다시 열어볼 수 있어요 ✨</p>
+</section>
+<section class="scene letter-scene oct27-letter" aria-label="10월 27일 열두 번째 응원 편지">
+<p class="letter-top">27 OCT 2026 · TO. 익명님 · FROM. 동석 🌙</p>
+<article class="paper"><p class="dear" style="--n:0">오늘도 정말 고생 많으셨어요 😊</p><p style="--n:1">오늘도 정말 고생 많으셨어요 😊 벌써 화요일 밤이네요 오늘 하루는 잘 보내셨나요? 저는 오늘 그동안 개발하던 시험 정보 공유 사이트인 ExamScope를 조금 더 개선하고 에브리타임에도 홍보글을 올려봤어요 다른 학생들이 시험을 준비할 때 조금이라도 도움이 됐으면 하는 마음으로 만들었는데 오늘 직접 후기를 남겨주셔서 정말 감사했어요 사실 아직 부족한 부분도 많고 사람들이 얼마나 이용해줄지도 잘 모르겠어서 고민이 있었는데 이렇게 직접 시간을 내서 참여해주시니까 정말 기분이 좋더라고요 무엇보다 제가 만든 서비스에 관심을 가져주시고 도움을 주셨다는 게 정말 감사했어요 덕분에 앞으로도 더 열심히 개선해보고 싶다는 생각이 들었어요 그리고 오늘은 미뤄뒀던 영어 공부도 다시 시작했어요 아직 헷갈리는 부분이 많지만 하나씩 다시 공부해보려고 해요 그리고 드디어 시험이 전부 끝나셨다고 하셨잖아요 그동안 시험 준비하시느라 정말 고생 많으셨어요 시험 기간에는 마음 편하게 쉬기도 어렵고 신경 쓸 일도 많으셨을 텐데 이제는 조금 여유를 가지셔도 좋을 것 같아요 저도 얼마 전에 시험을 전부 마치고 나니까 그동안 미뤄뒀던 일들을 다시 해볼 수 있어서 좋더라고요 혹시 시험에서 아쉬웠던 부분이 있으셨더라도 이제는 너무 신경 쓰지 마시고 그동안 고생하신 만큼 충분히 쉬셨으면 좋겠어요 오늘 ExamScope에 후기 남겨주신 것도 다시 한번 정말 감사드려요 덕분에 오늘 하루를 기분 좋게 마무리할 수 있을 것 같아요 시험도 모두 끝내셨고 오늘 하루도 정말 고생 많으셨어요 남은 밤은 걱정 내려놓으시고 편안하게 쉬셨으면 좋겠어요 내일은 오늘보다 조금 더 여유롭고 즐거운 하루가 되길 바랄게요 푹 주무시고 내일도 같이 힘내봐요 좋은 밤 보내세요 😊</p><p class="signature" style="--n:2">— 동석 드림 🌙</p></article>
+<p class="foot">시험도 모두 끝내셨으니 오늘은 편안하게 쉬세요 🌙</p><div class="letter-nav"><label for="home" class="back">← 편지 목록으로</label></div>
 </section>
 <section class="scene letter-scene oct26-letter" aria-label="10월 26일 열한 번째 응원 편지">
 <p class="letter-top">26 OCT 2026 · TO. 익명님 · FROM. 동석 🌙</p>
