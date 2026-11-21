@@ -4,6 +4,7 @@
   "main": "worker.js",
   "compatibility_date": "2026-11-21",
   "keep_vars": true,
+  "preview_urls": false,
   "vars": {
     "ALLOWED_ORIGINS": "https://usernameisuser11.github.io"
   },
