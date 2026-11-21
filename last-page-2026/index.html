@@ -21,6 +21,124 @@ main{background:linear-gradient(160deg,#f7f3eb,#f2eee6)}.section{padding:100px 0
 @media(max-width:980px){.hero{min-height:560px;gap:8px}.book-stage{min-height:450px}.book-stack{width:285px;height:380px}.book-cover{padding:45px 16px 25px}.book-cover h2{font-size:26px}.book-decoration{margin:0 0 15px;width:66px;height:66px}.split-section{grid-template-columns:240px 1fr;gap:23px}.side-copy h2{font-size:31px}.letter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.shell{padding:0 18px}.site-header{height:75px}.brand{font-size:15px}.brand-mark{width:30px;height:30px}.main-nav{gap:4px}.main-nav .nav-btn{display:none}.nav-cta{font-size:11px;padding:10px 14px}.hero{grid-template-columns:1fr;gap:0;padding-top:44px;padding-bottom:45px;text-align:center}.eyebrow{justify-content:center;font-size:10px}.hero h1{font-size:clamp(41px,10.4vw,60px);margin:20px 0 15px}.hero p{margin:auto;font-size:13px;line-height:2.1}.hero-actions{justify-content:center;margin-top:26px}.hero-actions .btn-primary,.hero-actions .btn-outline{padding:12px 19px;font-size:12px}.hero-caption{justify-content:center;margin-top:28px}.book-stage{min-height:365px;margin-top:11px}.book-stack{width:229px;height:292px}.book-cover{border-left-width:7px;padding:29px 12px 17px}.book-cover:after{inset:13px}.book-cover h2{font-size:21px;margin:7px 0}.book-year{font-size:9px}.book-decoration{width:49px;height:49px;margin-bottom:13px}.book-subtitle{font-size:8px}.book-ribbon{right:25px;width:17px;height:55px}.book-under p{font-size:17px}.floating-letter.one{left:9%;top:16%}.floating-letter.two{right:10%}.section{padding:69px 0}.sec-head{margin-bottom:27px}.sec-head h2{font-size:32px}.sec-head p{font-size:12px}.feature-row{grid-template-columns:1fr;gap:10px}.feature{padding:20px 19px;display:grid;grid-template-columns:35px 1fr;column-gap:10px;text-align:left}.feature .symbol{grid-row:span 2;font-size:23px;margin:0}.feature h3{font-size:16px;margin:0}.feature p{font-size:11px}.split-section{display:block}.side-copy{padding:0 0 20px;position:static;text-align:center}.side-copy h2{font-size:30px;margin:8px 0}.side-copy p{font-size:12px;margin:0}.aside-flourish{display:none}.paper-top{padding:34px 14px 10px}.paper-top h3{font-size:25px}.form-body{padding:8px 19px 28px}.field{margin:20px 0}.letter-area{min-height:210px;font-size:14px}.setting-panel{grid-template-columns:1fr;gap:0}.setting-panel>.field{margin:12px 0}.choice{padding:10px 13px}.envelopes{gap:6px}.env-choice{padding:12px 2px;font-size:10px}.env-icon{width:48px;height:32px}.gallery-top{display:block}.gallery-top .sec-head{text-align:center}.gallery-actions{justify-content:center;margin-top:18px}.letter-grid{grid-template-columns:1fr;gap:13px}.letter-card{min-height:235px;padding:22px}.letter-card .mini-env{margin:14px 0;width:89px;height:58px}.my-panel{padding:22px 17px}.recovery{flex-wrap:wrap}.recovery input{flex-basis:100%}.my-item{padding:13px 11px}.my-item .line1{font-size:13px}.my-item .line2{font-size:10px}.closing{padding:75px 24px}.site-footer{flex-direction:column;text-align:center;align-items:center}.admin-card{display:block}.admin-card button{margin:3px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}#snow{display:none}}
+
+/* 2026 · Simple letterbook — progressive disclosure, one clear primary action */
+:root{--navy:#172739;--paper:#fffcf6;--cream:#f9f6f0;--ink:#263343}
+body{background:#f9f6f0}
+.dark-part{background:radial-gradient(ellipse 65% 75% at 72% 23%,#34455a 0%,#1a2a3a 66%,#152331 100%)}
+.dark-part::after{height:85px;opacity:.16}
+.shell{max-width:980px}
+.site-header{height:70px;border-bottom-color:#ffffff1b}
+.brand{font-size:16px;gap:9px}
+.brand-mark{width:30px;height:30px;font-size:18px;border-radius:50%}
+.main-nav{gap:7px}
+.main-nav .nav-btn{color:#eadfce;font-size:12px;padding:9px 12px}
+.nav-cta{font-size:12px;padding:10px 15px}
+.hero{max-width:830px;min-height:0;grid-template-columns:1fr 185px;gap:22px;padding-top:52px;padding-bottom:60px;text-align:left}
+.hero-copy{padding:0}
+.hero h1{font-size:clamp(34px,4.1vw,49px);line-height:1.4;margin:17px 0 13px;white-space:normal}
+.hero h1 em{color:#f2d5a6}
+.hero p{font-size:13px;line-height:1.95;color:#cdd1d4;margin:0 0 23px}
+.eyebrow{font-size:10px}
+.hero-link{display:inline-flex;align-items:center;gap:8px;color:#e2c596;font-size:12px;padding:4px 0;border-bottom:1px solid #a9895d}
+.hero-ornament{height:172px;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:19px;opacity:.9}
+.hero-envelope{width:122px;height:85px;border:1px solid #e2cfac90;background:linear-gradient(135deg,#edd8b9,#d5b78a);border-radius:5px;box-shadow:0 15px 38px #0b1722aa;position:relative;transform:rotate(-8deg);display:grid;place-items:center}
+.hero-envelope:before{content:'';position:absolute;inset:0;background:#fff7df55;clip-path:polygon(0 0,50% 62%,100% 0)}
+.hero-envelope:after{content:'';position:absolute;top:47%;left:50%;transform:translate(-50%,-50%);width:26px;height:26px;background:#a37b55;border-radius:50%;box-shadow:0 2px 5px #0003}
+.hero-envelope span{z-index:1;color:#f8eacf;font-size:12px;transform:translateY(3px)}
+.hero-ornament-caption{font:9px 'DM Sans',sans-serif;letter-spacing:.23em;color:#baa88d}
+.modebar{min-height:35px;padding:8px 14px;font-size:10px;background:#12202e}
+.modebar .dot{width:6px;height:6px}
+main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
+.section{padding:56px 0}
+#write{padding:36px 0 66px;scroll-margin-top:10px}
+#about{display:none}
+.split-section{display:block;max-width:700px;margin:0 auto}
+.side-copy{display:none}
+.writing-card{border-radius:18px;overflow:hidden;box-shadow:0 12px 42px #534d4210;background:#fffdfa}
+.paper-top{padding:32px 35px 15px;text-align:left}
+.paper-top .paper-mini{font-size:10px;letter-spacing:.19em}
+.paper-top h3{font-size:29px;margin:12px 0 6px}
+.paper-top p{font-size:12px;margin:0}
+.form-body{padding:12px 35px 29px}
+.form-body .field{margin:10px 0 18px}
+.field-head{margin-bottom:11px}
+.field-head label{font-size:13px}
+.letter-area{min-height:196px;padding:20px;font-size:14px;line-height:1.95;background:#fffcf6;border-color:#e9dfd1;border-radius:11px}
+.letter-count{color:#a49b8d;font-size:10px}
+.letter-options{border:1px solid #e9dfd1;border-radius:12px;background:#fbf8f2;margin-top:19px;overflow:hidden}
+.letter-options>summary{padding:16px 17px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;list-style:none;font-size:12px;font-weight:600;color:#776450}
+.letter-options>summary::-webkit-details-marker{display:none}
+.letter-options>summary:hover{background:#f8f2e8}
+.summary-main{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}
+.summary-extra{font-size:11px;font-weight:400;color:#a19080}
+.expand-indicator{font-size:19px;line-height:1;transition:transform .2s}
+.letter-options[open] .expand-indicator{transform:rotate(180deg)}
+.settings-inner{padding:4px 16px 17px;border-top:1px solid #e9dfd1}
+.settings-inner .field{margin-top:20px}
+.settings-inner .setting-panel{gap:12px}
+.settings-inner .setting-panel>.field{margin:10px 0}
+.settings-inner .env-choice{padding:11px 5px;border-radius:9px}
+.settings-inner .env-icon{width:49px;height:30px}
+.settings-inner .schedule-option{font-size:11px;padding:10px 5px}
+.settings-inner .schedule-option .date-icon{font-size:15px;margin-bottom:2px}
+.bottom-notice{margin:19px 0 15px;padding:0;background:transparent;font-size:11px;color:#8b8176;line-height:1.8}
+.submit-wrap{text-align:left}
+.submit-wrap .btn-primary{width:100%;min-width:0;border-radius:12px;padding:14px;font-size:14px}
+.submit-wrap .small-print{text-align:center;font-size:10px;margin-top:10px}
+.gallery-section{background:#f5f0e8}
+.gallery-top .sec-head h2,.my-section .sec-head h2{font-size:31px}
+.gallery-top .sec-head p,.my-section .sec-head p{line-height:1.8}
+.letter-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.letter-card{min-height:198px;padding:18px 14px;border-radius:11px;text-align:left;align-items:flex-start}
+.letter-card .mini-env{height:37px;width:60px;margin:12px 0}
+.letter-card h3{font-size:15px;line-height:1.5}
+.letter-card p{font-size:10px}
+.letter-card .index{font-size:9px;letter-spacing:.12em}
+.empty-state{padding:43px 20px}
+.my-section{background:#faf7f1}
+.my-panel{max-width:700px;border-radius:14px;padding:23px;box-shadow:none}
+.closing{padding:55px 20px}
+.closing h2{font-size:clamp(21px,3vw,29px);line-height:1.8}
+.closing p{font-size:11px}
+.closing .endline{margin-top:20px;font-size:9px}
+.site-footer{font-size:10px}
+@media(max-width:680px){
+.shell{padding:0 19px}
+.site-header{height:62px}
+.brand{font-size:12px;gap:7px}
+.brand-mark{width:26px;height:26px;font-size:15px}
+.main-nav .nav-btn{display:inline-flex;font-size:11px;padding:7px 6px}
+.main-nav .nav-btn:first-child{display:none}
+.main-nav .nav-cta{font-size:11px;padding:8px 11px}
+.hero{grid-template-columns:1fr;gap:0;padding:40px 0 38px;text-align:center}
+.hero h1{font-size:clamp(31px,8.5vw,42px);margin:14px 0 9px}
+.hero p{font-size:12px;line-height:1.85;margin:0 auto 15px}
+.hero-ornament{display:none}
+.eyebrow{font-size:9px}
+#write{padding:20px 0 45px}
+.paper-top{padding:24px 21px 9px}
+.paper-top h3{font-size:25px}
+.paper-top p{font-size:11px}
+.form-body{padding:8px 17px 24px}
+.letter-area{min-height:180px;padding:15px;font-size:13px}
+.letter-options>summary{padding:14px 12px;font-size:11px}
+.summary-extra{font-size:10px}
+.summary-main{gap:8px}
+.settings-inner{padding:5px 12px 16px}
+.settings-inner .envelopes{gap:6px}
+.settings-inner .env-choice{font-size:9px}
+.settings-inner .env-icon{width:43px;height:27px}
+.settings-inner .schedule-option{font-size:10px}
+.section{padding-top:43px;padding-bottom:43px}
+.gallery-top .sec-head h2,.my-section .sec-head h2{font-size:26px}
+.gallery-actions{margin-top:10px}
+.letter-grid{grid-template-columns:1fr;gap:11px}
+.letter-card{min-height:142px;padding:15px 17px}
+.letter-card .mini-env{width:50px;height:32px;margin:7px 0}
+.my-panel{padding:19px 14px}
+.closing{padding:43px 18px}
+}
 </style>
 </head>
 <body>
@@ -28,31 +146,40 @@ main{background:linear-gradient(160deg,#f7f3eb,#f2eee6)}.section{padding:100px 0
   <div class="stars"></div><canvas id="snow" aria-hidden="true"></canvas>
   <div class="shell">
     <header class="site-header">
-      <a href="#home" class="brand" aria-label="처음으로"><span class="brand-mark">✦</span><span>2026, 마지막 페이지</span></a>
-      <nav class="main-nav" aria-label="주요 메뉴"><a class="nav-btn active" href="#home">첫 장</a><a class="nav-btn" href="#write">편지 쓰기</a><a class="nav-btn" href="#gallery">편지함</a><a class="nav-btn" href="#mine">나의 편지</a><a href="#write" class="nav-cta">마음 남기기 ↗</a></nav>
+      <a href="#home" class="brand" aria-label="처음으로"><span class="brand-mark">✦</span><span>2026 · 마지막 페이지</span></a>
+      <nav class="main-nav" aria-label="주요 메뉴"><a class="nav-btn" href="#gallery">다른 편지</a><a class="nav-btn" href="#mine">내 편지함</a><a class="nav-cta" href="#write">편지 쓰기</a></nav>
     </header>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><span class="eyebrow">THE LAST PAGE OF 2026</span><h1 id="hero-title">올해의 끝에서,<br><em>우리의 이야기를.</em></h1><p>어떤 말이든 괜찮아.<br>누군가에게 전하고 싶었던 마음도, 혼자 간직하고 싶었던 생각도.<br>2026년의 마지막 페이지에 조용히 남겨줘.</p><div class="hero-actions"><a class="btn-primary" href="#write">나의 편지 남기기 <span aria-hidden="true">↗</span></a><a class="btn-outline" href="#gallery">다른 편지 읽어보기</a></div><div class="hero-caption"><span class="tiny-line"></span><span>또래상담 · 2026 YEAR-END LETTER ARCHIVE</span></div></div>
-      <div class="book-stage"><div class="book-glow"></div><div class="floating-letter one"></div><div class="floating-letter two"></div><div class="book-stack" id="heroBook" role="button" tabindex="0" aria-label="책 열어보기" aria-pressed="false"><div class="book-pages"></div><div class="book-under"><span style="color:#b59364;font-size:24px">✦</span><p>모든 마음은<br>하나의 이야기가 된다.</p><small>너의 이야기도 이곳에 남겨줘.</small></div><div class="book-cover"><div class="book-ribbon"></div><svg class="book-decoration" viewBox="0 0 100 100" fill="none" aria-hidden="true"><circle cx="50" cy="50" r="32" stroke="currentColor" stroke-width=".8" opacity=".55"/><circle cx="50" cy="50" r="21" stroke="currentColor" stroke-width=".7" opacity=".5"/><path d="M50 4 L55 39 L88 50 L55 56 L50 94 L45 56 L12 50 L45 44 Z" fill="currentColor" opacity=".89"/><circle cx="50" cy="50" r="5" fill="#f4dba8"/><path d="M10 10l7 7m66 66 7 7M10 90l7-7m66-66 7-7" stroke="currentColor" opacity=".65"/></svg><span class="book-year">2 0 2 6</span><h2>우리의<br>마지막 페이지</h2><span class="book-subtitle">서로 다른 마음이 모인 한 권의 책</span></div></div></div>
+      <div class="hero-copy">
+        <span class="eyebrow">THE LAST PAGE OF 2026</span>
+        <h1 id="hero-title">2026,<br><em>우리의 마지막 페이지</em></h1>
+        <p>한 해의 끝에서, 전하고 싶은 이야기를 남겨줘.<br>짧아도 길어도, 어떤 말이든 괜찮아.</p>
+        <a class="hero-link" href="#write">마음 한 장 남기기 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-ornament" aria-hidden="true"><div class="hero-envelope"><span>✦</span></div><div class="hero-ornament-caption">A NOTE TO REMEMBER</div></div>
     </section>
   </div>
   <div class="modebar"><span class="dot"></span><span id="modeText">체험 모드 · 작성한 편지는 이 브라우저에만 저장돼요.</span></div>
 </div>
 <main>
-  <section class="section shell" id="about"><div class="sec-head"><div class="kicker">AN OPEN LETTER TO THE YEAR</div><h2>마음에 정답은 없으니까</h2><p>주제도, 정해진 형식도 필요 없어.<br>하고 싶은 말을 원하는 방식으로 기록해 봐.</p></div><div class="feature-row"><div class="feature"><div class="symbol">✎</div><h3>무슨 이야기든 자유롭게</h3><p>고마움, 응원, 일기, 또는 아무에게도 못 했던 이야기까지</p></div><div class="feature"><div class="symbol">✉</div><h3>내가 고르는 공개 방식</h3><p>모두와 나누거나, 나 혼자만 간직하거나</p></div><div class="feature"><div class="symbol">⌛</div><h3>내가 정하는 열리는 날</h3><p>지금, 시험이 끝난 후, 혹은 12월 마지막 밤에</p></div></div></section>
-  <section class="section shell" id="write"><div class="split-section"><aside class="side-copy"><span class="kicker">CHAPTER 01 · WRITE</span><h2>마음 한 장,<br>남겨줄래?</h2><p>길지 않아도 괜찮아.<br>지금 떠오르는 말 그대로 적어줘.<br>누군가를 위한 편지일 필요도 없어.</p><div class="aside-flourish">“</div></aside>
-    <div class="writing-card"><div class="paper-top"><div class="paper-mini">FROM ME, IN 2026</div><h3>나의 마지막 편지</h3><p>한 해의 끝에서 마음을 담아 적는 작은 기록</p></div>
-      <form class="form-body" id="letterForm" novalidate><div class="field"><div class="field-head"><label for="letterBody">하고 싶은 이야기 <span style="color:#ae8e5e">*</span></label><span class="optional">주제는 자유롭게</span></div><textarea id="letterBody" class="letter-area" maxlength="1500" required placeholder="2026년의 끝에서, 나는...&#10;&#10;하고 싶은 말을 자유롭게 적어줘."></textarea><div class="letter-count" id="letterCount">0 / 1,500자</div></div>
+  <section class="section shell" id="write"><div class="split-section">
+    <div class="writing-card"><div class="paper-top"><div class="paper-mini">WRITE A LETTER</div><h3>편지 한 장 남기기</h3><p>떠오르는 말을 그대로 적어줘.</p></div>
+      <form class="form-body" id="letterForm" novalidate><div class="field"><div class="field-head"><label for="letterBody">무슨 이야기든 괜찮아</label><span class="optional">최대 1,500자</span></div><textarea id="letterBody" class="letter-area" maxlength="1500" required placeholder="2026년의 끝에서, 전하고 싶은 이야기가 있다면…&#10;&#10;자유롭게 적어줘."></textarea><div class="letter-count" id="letterCount">0 / 1,500자</div></div>
+      <details class="letter-options" id="letterOptions">
+        <summary><span class="summary-main">✧ &nbsp; 편지 설정 <span class="summary-extra" id="settingsSummary">익명 · 모두에게 · 지금</span></span><span class="expand-indicator" aria-hidden="true">⌄</span></summary>
+        <div class="settings-inner">
       <div class="field"><div class="field-head"><label>편지 봉투 고르기</label><span class="optional">마음에 드는 색으로</span></div><div class="envelopes" id="envelopes"><button type="button" class="env-choice selected" data-envelope="ivory" aria-pressed="true"><span class="env-icon env-ivory"></span><span>아이보리</span></button><button type="button" class="env-choice" data-envelope="blue" aria-pressed="false"><span class="env-icon env-blue"></span><span>새벽빛</span></button><button type="button" class="env-choice" data-envelope="rose" aria-pressed="false"><span class="env-icon env-rose"></span><span>겨울 장미</span></button><button type="button" class="env-choice" data-envelope="sage" aria-pressed="false"><span class="env-icon env-sage"></span><span>숲의 기억</span></button></div></div>
       <div class="setting-panel"><div class="field"><div class="field-head"><label>이름 남기기</label></div><div class="choice-row" id="identityChoices"><button class="choice selected" type="button" data-identity="anonymous" aria-pressed="true">익명</button><button class="choice" type="button" data-identity="nickname" aria-pressed="false">별명</button></div><input id="nickname" class="input" maxlength="20" placeholder="별명을 입력해 줘" style="margin-top:11px;display:none" autocomplete="off"><div class="setting-note">실명이나 연락처는 적지 않는 걸 권장해.</div></div>
       <div class="field"><div class="field-head"><label>누가 읽을 수 있을까?</label></div><div class="choice-row" id="visibilityChoices"><button class="choice selected" type="button" data-visibility="public" aria-pressed="true">모두에게</button><button class="choice" type="button" data-visibility="private" aria-pressed="false">나만 보기</button></div><div class="setting-note" id="visibilityNote">공개 편지는 운영진의 확인 후 모두가 볼 수 있어.</div></div></div>
       <div class="field"><div class="field-head"><label>언제 봉투를 열까?</label></div><div class="schedule-options" id="scheduleChoices"><button class="schedule-option selected" type="button" data-schedule="now" aria-pressed="true"><span class="date-icon">✦</span>지금부터</button><button class="schedule-option" type="button" data-schedule="exam" aria-pressed="false"><span class="date-icon">☾</span>시험 끝난 후</button><button class="schedule-option" type="button" data-schedule="year" aria-pressed="false"><span class="date-icon">✧</span>12월 31일</button></div><div class="custom-date" id="customDate"><input class="input" type="date" id="openDate" aria-label="봉투를 열 날짜"><input class="input" type="time" id="openTime" aria-label="봉투를 열 시간" value="18:00"></div><div class="setting-note" id="scheduleNote">지금 작성하고, 공개 승인이 끝나면 다른 사람들도 읽을 수 있어.</div></div>
-      <div class="bottom-notice">✧ &nbsp; 비공개 편지는 열람 코드를 가진 사람만 읽을 수 있어. 작성 후 나오는 코드는 꼭 보관해 줘. 날짜를 지정하면 그때까지 내용이 봉인돼.</div><div class="submit-wrap"><button class="btn-primary" id="submitBtn" type="submit">편지 봉투에 담기 ✉</button><p class="small-print">공개 편지는 운영진 확인 후 게시됩니다. 타인의 개인정보나 비방은 남기지 말아 주세요.</p></div></form>
+        </div>
+      </details>
+      <div class="bottom-notice">편지를 보낸 뒤 나오는 <strong>열람 코드</strong>는 꼭 보관해 줘. 나만 보기 편지는 코드가 있어야 다시 읽을 수 있어.</div><div class="submit-wrap"><button class="btn-primary" id="submitBtn" type="submit">편지 남기기 <span aria-hidden="true">↗</span></button><p class="small-print">공개 편지는 운영진 확인 후 게시돼. 개인정보나 비방은 적지 말아 줘.</p></div></form>
     </div></div></section>
-  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">CHAPTER 02 · READ</div><h2>모두의 작은 편지함</h2><p>저마다의 하루가 담긴, 서로 다른 색의 봉투들.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">편지를 살펴보는 중</span></div></div><div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
-  <section class="section my-section" id="mine"><div class="shell"><div class="sec-head"><div class="kicker">CHAPTER 03 · KEEP</div><h2>나만의 편지 보관함</h2><p>이 기기에서 작성한 편지와, 열람 코드로 가져온 편지를 볼 수 있어.</p></div><div class="my-panel"><div style="font:19px 'Gowun Batang',serif">✉ &nbsp; 열람 코드로 편지 찾기</div><p>다른 기기에서 작성했거나 브라우저 기록을 지웠다면, 편지 작성 후 받은 열람 코드를 입력해 줘. 비공개 편지는 이 코드가 없으면 찾을 수 없어.</p><div class="recovery"><input class="input" id="receiptInput" placeholder="열람 코드 붙여넣기" autocomplete="off" aria-label="열람 코드"><button class="subtle-btn" id="recoverBtn" type="button">편지 찾기</button></div><div id="myList" class="my-list"></div></div></div></section>
+  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>모두의 편지</h2><p>누군가가 남긴 마음을 조용히 읽어봐.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">편지를 살펴보는 중</span></div></div><div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
+  <section class="section my-section" id="mine"><div class="shell"><div class="sec-head"><div class="kicker">MY LETTERS</div><h2>내 편지함</h2><p>내가 쓴 편지를 다시 읽거나, 열람 코드로 찾아봐.</p></div><div class="my-panel"><div style="font:19px 'Gowun Batang',serif">✉ &nbsp; 열람 코드로 편지 찾기</div><p>다른 기기에서 작성했거나 브라우저 기록을 지웠다면, 편지 작성 후 받은 열람 코드를 입력해 줘. 비공개 편지는 이 코드가 없으면 찾을 수 없어.</p><div class="recovery"><input class="input" id="receiptInput" placeholder="열람 코드 붙여넣기" autocomplete="off" aria-label="열람 코드"><button class="subtle-btn" id="recoverBtn" type="button">편지 찾기</button></div><div id="myList" class="my-list"></div></div></div></section>
 </main>
-<section class="closing"><div class="shell"><div style="color:#cfae78;font-size:25px">✦</div><h2>언젠가 이 페이지를 다시 열었을 때,<br>오늘의 우리가 따뜻하게 기억되기를.</h2><p>2026년의 모든 수고와 웃음과 조용한 마음에게.<br>올해도 정말 고생 많았어.</p><div class="endline">THE END OF A CHAPTER, NOT THE STORY.</div></div></section>
+<section class="closing"><div class="shell"><div style="color:#cfae78;font-size:25px">✦</div><h2>2026년의 마음이<br>오래도록 따뜻하게 남기를.</h2><p>올해도 정말 고생 많았어.</p><div class="endline">THE END OF A CHAPTER, NOT THE STORY.</div></div></section>
 <footer class="site-footer"><span>© 2026 우리의 마지막 페이지 · 또래상담 연말 편지함</span><span>우리의 이야기는 우리가 만들어 가요.</span></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="overlay" id="overlay" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button><div id="modalContent"></div></div></div>
@@ -92,6 +219,9 @@ optionGroup($('#identityChoices'),'identity',v=>{identity=v;$('#nickname').style
 optionGroup($('#visibilityChoices'),'visibility',v=>{visibility=v;$('#visibilityNote').textContent=v==='public'?'공개 편지는 운영진의 확인 후 모두가 볼 수 있어.':'이 편지는 열람 코드를 가진 사람만 읽을 수 있어.'});
 optionGroup($('#scheduleChoices'),'schedule',v=>{schedule=v;$('#customDate').classList.toggle('show',v==='exam');$('#scheduleNote').textContent=v==='now'?'지금 작성하고, 공개 승인이 끝나면 다른 사람들도 읽을 수 있어.':v==='exam'?'시험이 끝나는 날짜와 시간을 직접 골라줘.':'12월 31일 저녁 8시, 봉투가 열려.'});
 $('#letterBody').addEventListener('input',e=>$('#letterCount').textContent=`${e.target.value.length.toLocaleString()} / 1,500자`);
+function updateSettingsSummary(){const t=$('#settingsSummary');if(!t)return;t.textContent=[identity==='anonymous'?'익명':'별명',visibility==='public'?'모두에게':'나만 보기',schedule==='now'?'지금':schedule==='year'?'12월 31일':'날짜 지정'].join(' · ')}
+$('#letterOptions').addEventListener('click',e=>{if(e.target.closest('button'))queueMicrotask(updateSettingsSummary)});
+
 const todayLocal=()=>{const d=new Date(), f=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});return f.format(d)};
 $('#openDate').min=todayLocal();$('#openDate').value=todayLocal()<='2026-12-18'?'2026-12-18':todayLocal();
 function openTime(){if(schedule==='now')return new Date().toISOString();if(schedule==='year')return new Date(yearOpen).toISOString();const dt=$('#openDate').value,tm=$('#openTime').value;if(!dt||!tm)throw new Error('편지를 열 날짜와 시간을 선택해 줘.');const t=new Date(`${dt}T${tm}:00+09:00`);if(Number.isNaN(t.getTime())||t.getTime()<Date.now()-60*1000)throw new Error('지금 이후의 날짜를 선택해 줘.');return t.toISOString()}
@@ -99,8 +229,8 @@ function randomSecret(){const bytes=crypto.getRandomValues(new Uint8Array(24));r
 function makeUUID(){const b=crypto.getRandomValues(new Uint8Array(16));b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;const h=Array.from(b,n=>n.toString(16).padStart(2,'0')).join('');return `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`}
 function letterReceipt(id,secret){return id+'.'+secret}
 function saveReceipt(code){if(!receipts.includes(code)){receipts.unshift(code);saveReceipts()}}
-function resetWriting(){ $('#letterForm').reset();$('#letterCount').textContent='0 / 1,500자';$('#nickname').style.display='none';envelope='ivory';identity='anonymous';visibility='public';schedule='now';document.querySelector('[data-envelope="ivory"]').click();document.querySelector('[data-identity="anonymous"]').click();document.querySelector('[data-visibility="public"]').click();document.querySelector('[data-schedule="now"]').click();$('#openDate').value=todayLocal()<='2026-12-18'?'2026-12-18':todayLocal();$('#openTime').value='18:00'}
-$('#letterForm').addEventListener('submit',async e=>{e.preventDefault();const body=$('#letterBody').value.trim(),nickname=identity==='nickname'?$('#nickname').value.trim():'익명의 누군가';if(!body){toast('전하고 싶은 말을 먼저 적어 줘.');$('#letterBody').focus();return}if(body.length>1500){toast('편지는 1,500자까지 작성할 수 있어.');return}if(identity==='nickname'&&!nickname){toast('별명을 적거나 익명을 선택해 줘.');return}let at;try{at=openTime()}catch(err){toast(err.message);return}const btn=$('#submitBtn');btn.disabled=true;btn.textContent='봉투를 접고 있어…';const secret=randomSecret(),id=makeUUID(),code=letterReceipt(id,secret),payload={id,secret,body,nickname,envelope,audience:visibility,open_at:at};try{if(live){await api('/api/letters',{method:'POST',body:payload})}else{demoLetters.unshift({...payload,status:visibility==='private'?'approved':'approved',created_at:new Date().toISOString(),sample:false});saveDemo()}saveReceipt(code);resetWriting();renderMy();await renderGallery();showReceipt(code,at,visibility); }catch(err){toast('저장하지 못했어: '+err.message)}finally{btn.disabled=false;btn.textContent='편지 봉투에 담기 ✉'}});
+function resetWriting(){ $('#letterForm').reset();$('#letterCount').textContent='0 / 1,500자';$('#nickname').style.display='none';envelope='ivory';identity='anonymous';visibility='public';schedule='now';document.querySelector('[data-envelope="ivory"]').click();document.querySelector('[data-identity="anonymous"]').click();document.querySelector('[data-visibility="public"]').click();document.querySelector('[data-schedule="now"]').click();$('#openDate').value=todayLocal()<='2026-12-18'?'2026-12-18':todayLocal();$('#openTime').value='18:00';$('#letterOptions').open=false;updateSettingsSummary()}
+$('#letterForm').addEventListener('submit',async e=>{e.preventDefault();const body=$('#letterBody').value.trim(),nickname=identity==='nickname'?$('#nickname').value.trim():'익명의 누군가';if(!body){toast('전하고 싶은 말을 먼저 적어 줘.');$('#letterBody').focus();return}if(body.length>1500){toast('편지는 1,500자까지 작성할 수 있어.');return}if(identity==='nickname'&&!nickname){toast('별명을 적거나 익명을 선택해 줘.');return}let at;try{at=openTime()}catch(err){toast(err.message);return}const btn=$('#submitBtn');btn.disabled=true;btn.textContent='봉투를 접고 있어…';const secret=randomSecret(),id=makeUUID(),code=letterReceipt(id,secret),payload={id,secret,body,nickname,envelope,audience:visibility,open_at:at};try{if(live){await api('/api/letters',{method:'POST',body:payload})}else{demoLetters.unshift({...payload,status:visibility==='private'?'approved':'approved',created_at:new Date().toISOString(),sample:false});saveDemo()}saveReceipt(code);resetWriting();renderMy();await renderGallery();showReceipt(code,at,visibility); }catch(err){toast('저장하지 못했어: '+err.message)}finally{btn.disabled=false;btn.textContent='편지 남기기 ↗'}});
 function showModal(node){const c=$('#modalContent');c.replaceChildren(node);$('#overlay').classList.add('show');$('#overlay').setAttribute('aria-hidden','false');$('#modalClose').focus();document.body.style.overflow='hidden'}
 function closeModal(){$('#overlay').classList.remove('show');$('#overlay').setAttribute('aria-hidden','true');document.body.style.overflow=''}
 $('#modalClose').onclick=closeModal;$('#overlay').addEventListener('click',e=>{if(e.target===$('#overlay'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#overlay').classList.contains('show'))closeModal()});
@@ -121,7 +251,6 @@ $('#receiptInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('#recover
 function confirmDeleteLetter(l){const box=modalBase('DELETE LETTER','정말 이 편지를 삭제할까?');box.append(create('p','', '삭제한 편지는 복구할 수 없어. 다시 한 번 선택해 줘.'));const actions=create('div','modal-actions');const cancel=create('button','subtle-btn','취소');cancel.onclick=()=>showLetter(l,true);const yes=create('button','red-btn','확실히 삭제하기');yes.onclick=async()=>{yes.disabled=true;yes.textContent='삭제 중…';await deleteLetter(l);yes.disabled=false;yes.textContent='확실히 삭제하기'};actions.append(cancel,yes);box.append(actions);showModal(box)}
 async function deleteLetter(l){const code=receipts.find(x=>x.startsWith(l.id+'.'));if(!code){toast('열람 코드를 찾을 수 없어.');return}try{if(live)await api('/api/letters/delete',{method:'POST',body:{receipt:code}});else{demoLetters=demoLetters.filter(x=>x.id!==l.id);saveDemo()}receipts=receipts.filter(x=>x!==code);saveReceipts();closeModal();renderMy();await renderGallery();toast('편지를 삭제했어.')}catch(err){toast(err.message)}}
 $('#refreshGallery').onclick=renderGallery;
-$('#heroBook').addEventListener('click',()=>{const b=$('#heroBook');const open=b.classList.toggle('open');b.setAttribute('aria-pressed',String(open));b.setAttribute('aria-label',open?'책 닫기':'책 열어보기')});$('#heroBook').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#heroBook').click()}});
 function setupAdmin(){if(new URLSearchParams(location.search).get('admin')!=='1')return;const panel=$('#adminPanel');panel.classList.add('show');if(!live){$('#pendingList').textContent='체험 모드에서는 운영진 검토가 필요하지 않아.';return}const load=async()=>{const key=$('#adminKey').value;const list=$('#pendingList');list.textContent='불러오는 중…';try{const d=await api('/api/admin/pending',{headers:{'X-Admin-Key':key}});list.replaceChildren();if(!d.letters.length)list.textContent='검토할 공개 편지가 없어.';for(const l of d.letters){const card=create('div','admin-card'),info=create('div');info.style.flex='1';info.append(create('strong','',l.nickname),create('p','',l.body),create('small','',`게시 예정: ${fmtDate(l.open_at)}`));const actions=create('div');for(const [status,label] of [['approved','승인'],['rejected','거절']]){const b=create('button',status==='approved'?'subtle-btn':'red-btn',label);b.onclick=async()=>{b.disabled=true;try{await api('/api/admin/moderate',{method:'POST',body:{id:l.id,status},headers:{'X-Admin-Key':key}});toast(label+' 처리했어.');await load();renderGallery()}catch(err){toast(err.message)}finally{b.disabled=false}};actions.append(b)}card.append(info,actions);list.append(card)}}catch(err){list.textContent='불러오지 못했어: '+err.message}};$('#adminLoad').onclick=load}
 $('#modeText').innerHTML=live?'실제 편지함에 연결되어 있어요. <strong>공개 편지는 운영진 확인 후 게시됩니다.</strong>':storageReady?'<strong>체험 모드</strong> · 작성한 편지는 이 브라우저에만 저장돼요. 서버 연결 전에는 다른 사람과 공유되지 않아요.':'<strong>체험 모드</strong> · 이 미리보기에서는 브라우저 저장이 제한되어 새로고침 시 편지가 사라질 수 있어요.';
 // Snow rendered without external imagery: gentle, subtle winter atmosphere.
