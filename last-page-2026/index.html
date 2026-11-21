@@ -224,7 +224,26 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
 .pinned-letter-copy p{font-size:10px;line-height:1.75;margin-bottom:8px}
 .pinned-letter-open{font-size:11px}
 .pinned-letter-body{max-height:66vh;font-size:14px!important;line-height:2.05!important}
-}</style>
+}
+/* Permanent owner letter stays above ALL server-fetched letters, including offline/errors. */
+.pinned-letter-wrap{display:block;margin:0 0 23px}
+.pinned-letter-wrap > summary{list-style:none;cursor:pointer}
+.pinned-letter-wrap > summary::-webkit-details-marker{display:none}
+.pinned-letter-wrap .pinned-letter-copy{display:block}
+.pinned-letter-wrap .pinned-letter-copy > span{display:block}
+.pinned-letter-wrap .pinned-letter-title{font:normal 26px/1.5 'Gowun Batang',serif;letter-spacing:-.05em;color:#4c4137;margin:10px 0}
+.pinned-letter-wrap .pinned-letter-excerpt{font-size:12px;line-height:2;color:#786b5c;margin:0 0 13px;word-break:keep-all}
+.pinned-letter-wrap > summary:focus-visible{outline:3px solid #bc9664;outline-offset:4px}
+.pinned-letter-wrap[open] .pinned-letter-open{color:#675238}
+.pinned-full-body{margin:8px 0 0;padding:30px clamp(20px,6vw,55px) 22px;border:1px solid #e2d2bc;background:#fffaf0;border-radius:16px;box-shadow:0 11px 33px #53432712}
+.pinned-full-head{text-align:center;border-bottom:1px solid #e4d7c6;padding-bottom:20px;margin-bottom:23px}
+.pinned-full-head span{font:10px 'DM Sans',sans-serif;letter-spacing:.17em;color:#ad8e64}
+.pinned-full-head h3{font:normal 25px/1.6 'Gowun Batang',serif;color:#5e4b39;margin:9px 0 0}
+.pinned-full-text{max-width:690px;margin:auto;color:#4c4944;font:15px/2.12 'Gowun Batang',serif;word-break:keep-all}
+.pinned-full-text p{margin:0 0 23px;white-space:normal}
+.pinned-letter-close-hint{margin:24px 0 0;text-align:center;color:#9a8d7c;font-size:11px}
+@media(max-width:680px){.pinned-letter-wrap .pinned-letter-title{font-size:19px;margin:7px 0}.pinned-letter-wrap .pinned-letter-excerpt{font-size:10px;line-height:1.7;margin-bottom:8px}.pinned-full-body{padding:23px 18px 20px}.pinned-full-head h3{font-size:22px}.pinned-full-text{font-size:14px;line-height:1.98}.pinned-full-text p{margin-bottom:20px}}
+</style>
 </head>
 <body>
 <div class="dark-part" id="home">
@@ -279,7 +298,35 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
   </div>
   <p class="intro-footnote">누가 편지를 몇 장 썼는지 집계하거나 보여주지 않아. 공개 편지에는 작성자 이름·별명이나 작성 시각도 표시하지 않아. 본문에 직접 신원을 밝히면 다른 사람이 알아볼 수 있으니 주의해 줘.</p>
 </section>
-  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div><div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
+  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div><details class="pinned-letter-wrap" id="pinnedLetter">
+    <summary class="pinned-letter-card">
+      <span class="pinned-letter-art" aria-hidden="true"><span class="pinned-envelope"><span class="pinned-seal">✦</span></span></span>
+      <span class="pinned-letter-copy">
+        <span class="pinned-letter-eyebrow">FROM THE ONE WHO MADE THIS SPACE · 가장 먼저 전하는 편지</span>
+        <span class="pinned-letter-title">함께해 주셔서 고맙습니다</span>
+        <span class="pinned-letter-excerpt">비밀친구와 작은 미션, 교양 정리표와 편지함까지. 그동안 이런 활동들을 준비했던 이유와 함께해 주신 분들께 전하는 감사 인사입니다.</span>
+        <span class="pinned-letter-open">편지 읽어보기 ↗</span>
+      </span>
+    </summary>
+    <div class="pinned-full-body">
+      <div class="pinned-full-head"><span>2026 · 또상에게 전하는 편지</span><h3>함께해 주셔서 고맙습니다</h3></div>
+      <div class="pinned-full-text"><p>안녕하세요 또상 여러분!</p>
+<p>2026년도 어느덧 끝을 향해 가고 있네요. 한 해를 마무리하면서 꼭 전하고 싶었던 이야기가 있어 이렇게 편지를 남깁니다.</p>
+<p>올해 또상에서 비밀친구 활동과 작은 미션을 준비하고 교양 정리표나 편지함 같은 것들도 만들어봤습니다. 지금 돌아보면 서로 다른 활동이었지만 시작한 이유는 비슷했던 것 같아요.</p>
+<p>평소에 대화할 기회가 없었던 분들이 조금 더 편하게 이야기를 나누고 필요한 정보를 찾는 수고를 조금이나마 덜고, 바쁜 하루 속에서 짧은 응원 한마디를 만날 수 있으면 좋겠다고 생각했습니다. 누군가의 학교생활에 작더라도 기분 좋은 순간을 더해보고 싶었어요.</p>
+<p>물론 준비하는 과정이 늘 순조롭지만은 않았습니다. 어떻게 하면 더 편하게 참여할 수 있을지 고민도 했고 누군가는 불편하고 이상하게 느낄 수도 있겠다고 생각했으며 막상 만들고 나면 아쉬운 부분도 보였습니다. 그래도 이런 작은 시도들이 누군가에게 도움이 되거나 좋은 기억으로 남았다면 그것만으로도 참 기쁠 것 같습니다.</p>
+<p>무엇보다 올해 또상에서 함께해 주신 모든 분께 감사드리고 싶습니다. 자주 이야기 나누지 못했던 분들도 계시겠지만 같은 공간에서 함께 시간을 보냈다는 것만으로도 소중한 인연이라고 생각합니다.</p>
+<p>그리고 모두에게 꼭 전하고 싶은 말이 있습니다.</p>
+<p>올해도 정말 고생 많으셨습니다.</p>
+<p>수업과 시험, 과제, 여러 활동까지 각자의 자리에서 바쁜 날들을 보내셨을 텐데, 남은 한 해만큼은 스스로에게도 수고했다고 이야기해 주셨으면 좋겠습니다. 다가오는 시험도 너무 무리하지 마시고, 식사와 잠도 잘 챙기셨으면 해요.</p>
+<p>이번 마지막 편지함도 그런 마음으로 만들었습니다. 꼭 특별하거나 멋진 말을 남기지 않으셔도 괜찮습니다. 올해의 추억이나 고마웠던 일, 누군가에게 전하고 싶은 한마디처럼 떠오르는 이야기를 편하게 적어주세요. 그냥 다른 분들의 편지를 읽고 가셔도 좋습니다.</p>
+<p>이 작은 공간이 잠시라도 따뜻한 시간이 되었으면 좋겠습니다.</p>
+<p>2026년, 함께해 주셔서 진심으로 감사합니다. 남은 시험 기간도 잘 마무리하시고, 모두 건강하고 따뜻한 연말 보내시길 바랍니다.🍀🍀</p>
+<p>— 또상에서 작은 것들을 만들었던 사람 드림</p></div>
+      <p class="pinned-letter-close-hint">위의 편지 제목을 누르면 다시 접을 수 있어요.</p>
+    </div>
+  </details>
+  <div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
   <section class="section shell" id="write"><div class="split-section">
     <div class="writing-card"><div class="paper-top"><div class="paper-mini">WRITE A LETTER</div><h3>편지 한 장 남기기</h3><p>떠오르는 말을 그대로 적어줘.</p></div>
       <form class="form-body" id="letterForm" novalidate><div class="field"><div class="field-head"><label for="letterBody">무슨 이야기든 괜찮아</label><span class="optional">최대 1,500자</span></div><textarea id="letterBody" class="letter-area" maxlength="1500" required placeholder="2026년의 끝에서, 전하고 싶은 이야기가 있다면…&#10;&#10;자유롭게 적어줘."></textarea><div class="letter-count" id="letterCount">0 / 1,500자</div></div>
@@ -355,22 +402,7 @@ function modalBase(kicker,title){const wrap=create('div');wrap.append(create('di
 function showReceipt(code,at,audience){const w=modalBase('A LETTER SEALED IN 2026','한 장의 마음이 담겼어.');w.append(create('p','',new Date(at).getTime()>Date.now()?`${fmtDate(at)}에 열리는 편지야.`:'소중한 편지가 접수되었어.'));
 const box=create('div','receipt-box');box.append(create('strong','', '✦ 내 편지 열람 코드'),create('div','receipt-code',code));const tools=create('div','receipt-actions');const copy=create('button','subtle-btn','열람 코드 복사');copy.onclick=()=>copyText(code);tools.append(copy);box.append(tools);w.append(box);w.append(create('p','small-print',`이 코드는 비밀번호와 같아. 다른 사람에게 보여주지 말고 안전하게 보관해 줘. ${audience==='public'?'공개 편지는 운영진 검토 후 표시돼.':'비공개 편지는 갤러리에 나타나지 않아.'}`));const actions=create('div','modal-actions');const see=create('button','btn-primary','나의 편지함 보기');see.onclick=()=>{closeModal();location.hash='mine'};actions.append(see);w.append(actions);showModal(w)}
 async function copyText(text){try{await navigator.clipboard.writeText(text);toast('열람 코드를 복사했어.')}catch{toast('복사할 수 없어. 코드를 직접 선택해서 보관해 줘.')}}
-const PINNED_LETTER_TITLE="함께해 주셔서 고맙습니다";
-const PINNED_LETTER="안녕하세요 또상 여러분!\n\n2026년도 어느덧 끝을 향해 가고 있네요. 한 해를 마무리하면서 꼭 전하고 싶었던 이야기가 있어 이렇게 편지를 남깁니다.\n\n올해 또상에서 비밀친구 활동과 작은 미션을 준비하고 교양 정리표나 편지함 같은 것들도 만들어봤습니다. 지금 돌아보면 서로 다른 활동이었지만 시작한 이유는 비슷했던 것 같아요.\n\n평소에 대화할 기회가 없었던 분들이 조금 더 편하게 이야기를 나누고 필요한 정보를 찾는 수고를 조금이나마 덜고, 바쁜 하루 속에서 짧은 응원 한마디를 만날 수 있으면 좋겠다고 생각했습니다. 누군가의 학교생활에 작더라도 기분 좋은 순간을 더해보고 싶었어요.\n\n물론 준비하는 과정이 늘 순조롭지만은 않았습니다. 어떻게 하면 더 편하게 참여할 수 있을지 고민도 했고 누군가는 불편하고 이상하게 느낄 수도 있겠다고 생각했으며 막상 만들고 나면 아쉬운 부분도 보였습니다. 그래도 이런 작은 시도들이 누군가에게 도움이 되거나 좋은 기억으로 남았다면 그것만으로도 참 기쁠 것 같습니다.\n\n무엇보다 올해 또상에서 함께해 주신 모든 분께 감사드리고 싶습니다. 자주 이야기 나누지 못했던 분들도 계시겠지만 같은 공간에서 함께 시간을 보냈다는 것만으로도 소중한 인연이라고 생각합니다.\n\n그리고 모두에게 꼭 전하고 싶은 말이 있습니다.\n\n올해도 정말 고생 많으셨습니다.\n\n수업과 시험, 과제, 여러 활동까지 각자의 자리에서 바쁜 날들을 보내셨을 텐데, 남은 한 해만큼은 스스로에게도 수고했다고 이야기해 주셨으면 좋겠습니다. 다가오는 시험도 너무 무리하지 마시고, 식사와 잠도 잘 챙기셨으면 해요.\n\n이번 마지막 편지함도 그런 마음으로 만들었습니다. 꼭 특별하거나 멋진 말을 남기지 않으셔도 괜찮습니다. 올해의 추억이나 고마웠던 일, 누군가에게 전하고 싶은 한마디처럼 떠오르는 이야기를 편하게 적어주세요. 그냥 다른 분들의 편지를 읽고 가셔도 좋습니다.\n\n이 작은 공간이 잠시라도 따뜻한 시간이 되었으면 좋겠습니다.\n\n2026년, 함께해 주셔서 진심으로 감사합니다. 남은 시험 기간도 잘 마무리하시고, 모두 건강하고 따뜻한 연말 보내시길 바랍니다.🍀🍀\n\n— 또상에서 작은 것들을 만들었던 사람 드림";
-function renderPinnedLetter(grid){
-  const card=create('button','pinned-letter-card');card.type='button';card.setAttribute('aria-label','첫 번째 편지: 함께해 주셔서 고맙습니다. 편지 읽기');
-  const art=create('div','pinned-letter-art');
-  const envelope=create('div','pinned-envelope');envelope.append(create('span','pinned-seal','✦'));art.append(envelope);
-  const info=create('div','pinned-letter-copy');
-  info.append(create('span','pinned-letter-eyebrow','FROM THE ONE WHO MADE THIS SPACE'));
-  info.append(create('h3','',PINNED_LETTER_TITLE));
-  info.append(create('p','', '비밀친구와 작은 미션, 교양 정리표와 편지함까지. 그동안 이런 활동들을 준비했던 이유와 한 해 동안 함께해 주신 분들께 전하는 감사 인사입니다.'));
-  info.append(create('span','pinned-letter-open','편지 열어보기 ↗'));
-  card.append(art,info);
-  card.addEventListener('click',()=>{const w=modalBase('A LETTER TO 또상',PINNED_LETTER_TITLE);const body=create('div','letter-content pinned-letter-body',PINNED_LETTER);w.append(body);showModal(w)});
-  grid.append(card);
-}
-async function renderGallery(){const grid=$('#letterGrid');grid.replaceChildren();renderPinnedLetter(grid);$('#galleryMeta').textContent='편지를 불러오는 중';let rows=[],sealedCount=0;try{if(live){const data=await api('/api/gallery');rows=data.letters;sealedCount=data.sealed_count||0}else{rows=demoLetters.filter(l=>l.audience==='public'&&l.status==='approved'&&new Date(l.open_at).getTime()<=Date.now()).sort((a,b)=>b.created_at.localeCompare(a.created_at));sealedCount=demoLetters.filter(l=>l.audience==='public'&&new Date(l.open_at).getTime()>Date.now()).length}$('#galleryMeta').textContent='함께 읽는 편지';
+async function renderGallery(){const grid=$('#letterGrid');grid.replaceChildren();$('#galleryMeta').textContent='편지를 불러오는 중';let rows=[],sealedCount=0;try{if(live){const data=await api('/api/gallery');rows=data.letters;sealedCount=data.sealed_count||0}else{rows=demoLetters.filter(l=>l.audience==='public'&&l.status==='approved'&&new Date(l.open_at).getTime()<=Date.now()).sort((a,b)=>b.created_at.localeCompare(a.created_at));sealedCount=demoLetters.filter(l=>l.audience==='public'&&new Date(l.open_at).getTime()>Date.now()).length}$('#galleryMeta').textContent='함께 읽는 편지';
 if(!rows.length&&!sealedCount){const empty=create('div','empty-state');empty.style.gridColumn='1/-1';empty.append(create('div','empty-symbol','✉'),create('h3','','다른 편지들도 기다리고 있어'),create('p','','위에 놓인 첫 편지를 읽어보고, 네 마음도 자유롭게 남겨줘.'));grid.append(empty)}
 rows.forEach((l,i)=>{const card=create('button','letter-card');card.type='button';const number=create('span','index','2026 · LETTER'),env=create('span','mini-env');env.style.background=ENVELOPES[l.envelope]||ENVELOPES.ivory;let body=l.body||'';let title=body.split('\n').find(t=>t.trim())?.trim()||'한 장의 편지';title=title.length>38?title.slice(0,38)+'…':title;card.append(number,env,create('h3','',title),create('p','','익명의 편지'));card.addEventListener('click',()=>showLetter(l));grid.append(card)});
 const showSealed=Math.min(sealedCount,3);for(let i=0;i<showSealed;i++){const card=create('div','letter-card sealed');const env=create('span','mini-env');env.style.background=Object.values(ENVELOPES)[i%4];card.append(create('span','index','SEALED LETTER'),env,create('h3','','아직 열리지 않은 편지'),create('p','','때가 되면 이곳에서 만날 수 있어.'));grid.append(card)}$('#galleryFooter').textContent=live?'공개 편지는 운영진 확인을 마친 후 표시돼.':'체험 모드 · 위 예시 편지와 새로 작성한 편지는 이 브라우저에서만 보여.';
