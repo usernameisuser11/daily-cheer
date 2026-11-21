@@ -243,6 +243,15 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
 .pinned-full-text p{margin:0 0 23px;white-space:normal}
 .pinned-letter-close-hint{margin:24px 0 0;text-align:center;color:#9a8d7c;font-size:11px}
 @media(max-width:680px){.pinned-letter-wrap .pinned-letter-title{font-size:19px;margin:7px 0}.pinned-letter-wrap .pinned-letter-excerpt{font-size:10px;line-height:1.7;margin-bottom:8px}.pinned-full-body{padding:23px 18px 20px}.pinned-full-head h3{font-size:22px}.pinned-full-text{font-size:14px;line-height:1.98}.pinned-full-text p{margin-bottom:20px}}
+
+/* Owner's opening letter is fully visible by default and can be folded at either end. */
+.pinned-letter-wrap .pin-collapsed-label{display:inline}
+.pinned-letter-wrap .pin-expanded-label{display:none}
+.pinned-letter-wrap[open] .pin-collapsed-label{display:none}
+.pinned-letter-wrap[open] .pin-expanded-label{display:inline}
+.pinned-letter-close-btn{display:block;margin:29px auto 3px;padding:11px 23px;background:#f8efdf;border:1px solid #ceb797;color:#755d40;border-radius:25px;font:600 12px 'Noto Sans KR',sans-serif;cursor:pointer;transition:background .2s}
+.pinned-letter-close-btn:hover{background:#ecdfc9}
+.pinned-letter-close-btn:focus-visible{outline:3px solid #bb965e;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -298,14 +307,14 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
   </div>
   <p class="intro-footnote">누가 편지를 몇 장 썼는지 집계하거나 보여주지 않아. 공개 편지에는 작성자 이름·별명이나 작성 시각도 표시하지 않아. 본문에 직접 신원을 밝히면 다른 사람이 알아볼 수 있으니 주의해 줘.</p>
 </section>
-  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div><details class="pinned-letter-wrap" id="pinnedLetter">
+  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div><details class="pinned-letter-wrap" id="pinnedLetter" open>
     <summary class="pinned-letter-card">
       <span class="pinned-letter-art" aria-hidden="true"><span class="pinned-envelope"><span class="pinned-seal">✦</span></span></span>
       <span class="pinned-letter-copy">
         <span class="pinned-letter-eyebrow">FROM THE ONE WHO MADE THIS SPACE · 가장 먼저 전하는 편지</span>
         <span class="pinned-letter-title">함께해 주셔서 고맙습니다</span>
         <span class="pinned-letter-excerpt">비밀친구와 작은 미션, 교양 정리표와 편지함까지. 그동안 이런 활동들을 준비했던 이유와 함께해 주신 분들께 전하는 감사 인사입니다.</span>
-        <span class="pinned-letter-open">편지 읽어보기 ↗</span>
+        <span class="pinned-letter-open"><span class="pin-collapsed-label">편지 읽어보기 ↗</span><span class="pin-expanded-label">편지 접기 ↑</span></span>
       </span>
     </summary>
     <div class="pinned-full-body">
@@ -323,7 +332,7 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
 <p>이 작은 공간이 잠시라도 따뜻한 시간이 되었으면 좋겠습니다.</p>
 <p>2026년, 함께해 주셔서 진심으로 감사합니다. 남은 시험 기간도 잘 마무리하시고, 모두 건강하고 따뜻한 연말 보내시길 바랍니다.🍀🍀</p>
 <p>— 또상에서 작은 것들을 만들었던 사람 드림</p></div>
-      <p class="pinned-letter-close-hint">위의 편지 제목을 누르면 다시 접을 수 있어요.</p>
+      <button type="button" id="closePinnedLetter" class="pinned-letter-close-btn">편지 접기 ↑</button>
     </div>
   </details>
   <div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
@@ -415,6 +424,7 @@ $('#receiptInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('#recover
 function confirmDeleteLetter(l){const box=modalBase('DELETE LETTER','정말 이 편지를 삭제할까?');box.append(create('p','', '삭제한 편지는 복구할 수 없어. 다시 한 번 선택해 줘.'));const actions=create('div','modal-actions');const cancel=create('button','subtle-btn','취소');cancel.onclick=()=>showLetter(l,true);const yes=create('button','red-btn','확실히 삭제하기');yes.onclick=async()=>{yes.disabled=true;yes.textContent='삭제 중…';await deleteLetter(l);yes.disabled=false;yes.textContent='확실히 삭제하기'};actions.append(cancel,yes);box.append(actions);showModal(box)}
 async function deleteLetter(l){const code=receipts.find(x=>x.startsWith(l.id+'.'));if(!code){toast('열람 코드를 찾을 수 없어.');return}try{if(live)await api('/api/letters/delete',{method:'POST',body:{receipt:code}});else{demoLetters=demoLetters.filter(x=>x.id!==l.id);saveDemo()}receipts=receipts.filter(x=>x!==code);saveReceipts();closeModal();renderMy();await renderGallery();toast('편지를 삭제했어.')}catch(err){toast(err.message)}}
 $('#refreshGallery').onclick=renderGallery;
+$('#closePinnedLetter').addEventListener('click',()=>{const panel=$('#pinnedLetter');panel.open=false;panel.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});});
 function setupAdmin(){if(new URLSearchParams(location.search).get('admin')!=='1')return;const panel=$('#adminPanel');panel.classList.add('show');if(!live){$('#pendingList').textContent='체험 모드에서는 운영진 검토가 필요하지 않아.';return}const load=async()=>{const key=$('#adminKey').value;const list=$('#pendingList');list.textContent='불러오는 중…';try{const d=await api('/api/admin/pending',{headers:{'X-Admin-Key':key}});list.replaceChildren();if(!d.letters.length)list.textContent='검토할 공개 편지가 없어.';for(const l of d.letters){const card=create('div','admin-card'),info=create('div');info.style.flex='1';info.append(create('strong','','검토할 공개 편지'),create('p','',l.body),create('small','',`공개 예정: ${fmtDate(l.open_at)}`));const actions=create('div');for(const [status,label] of [['approved','승인'],['rejected','거절']]){const b=create('button',status==='approved'?'subtle-btn':'red-btn',label);b.onclick=async()=>{b.disabled=true;try{await api('/api/admin/moderate',{method:'POST',body:{id:l.id,status},headers:{'X-Admin-Key':key}});toast(label+' 처리했어.');await load();renderGallery()}catch(err){toast(err.message)}finally{b.disabled=false}};actions.append(b)}card.append(info,actions);list.append(card)}}catch(err){list.textContent='불러오지 못했어: '+err.message}};$('#adminLoad').onclick=load}
 $('#modeText').innerHTML=live?'실제 편지함에 연결되어 있어요. <strong>공개 편지는 운영진 확인 후 게시됩니다.</strong>':storageReady?'<strong>체험 모드</strong> · 작성한 편지는 이 브라우저에만 저장돼요. 서버 연결 전에는 다른 사람과 공유되지 않아요.':'<strong>체험 모드</strong> · 이 미리보기에서는 브라우저 저장이 제한되어 새로고침 시 편지가 사라질 수 있어요.';
 // Snow rendered without external imagery: gentle, subtle winter atmosphere.
