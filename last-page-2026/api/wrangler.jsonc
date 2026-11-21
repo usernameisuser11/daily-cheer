@@ -8,6 +8,7 @@
   "vars": {
     "ALLOWED_ORIGINS": "https://usernameisuser11.github.io"
   },
+  "ratelimits": [{"name":"LETTER_RATE","namespace_id":"20261121","simple":{"limit":6,"period":60}}],
   "d1_databases": [
     {
       "binding": "DB",
