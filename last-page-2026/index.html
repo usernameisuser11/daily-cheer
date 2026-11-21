@@ -252,6 +252,28 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
 .pinned-letter-close-btn{display:block;margin:29px auto 3px;padding:11px 23px;background:#f8efdf;border:1px solid #ceb797;color:#755d40;border-radius:25px;font:600 12px 'Noto Sans KR',sans-serif;cursor:pointer;transition:background .2s}
 .pinned-letter-close-btn:hover{background:#ecdfc9}
 .pinned-letter-close-btn:focus-visible{outline:3px solid #bb965e;outline-offset:3px}
+
+/* The letter is the FIRST content directly under the navigation. Always expanded in HTML. */
+.featured-opening{position:relative;z-index:2;padding:25px 0 20px;scroll-margin-top:20px}
+.featured-opening .pinned-open-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:10px;color:#e8d6b6;font-size:11px;letter-spacing:.08em}
+.pinned-top-fold{cursor:pointer;background:#dcb98518;border:1px solid #e6cdad70;border-radius:30px;color:#f6e8d0;white-space:nowrap;padding:9px 16px;font-size:12px}
+.pinned-top-fold:hover{background:#e6cdad2b}
+.featured-opening .pinned-full-body{background:#fffaf0;box-shadow:0 18px 55px #050d1657;margin:0;min-height:200px}
+.featured-opening [hidden]{display:none!important}
+.featured-opening .pinned-unfold{width:100%;display:flex;align-items:center;text-align:left;gap:18px;background:#fff7e8;color:#654e39;border:1px solid #ddc8aa;border-radius:15px;padding:22px 26px;cursor:pointer;box-shadow:0 11px 35px #040d173b}
+.pinned-unfold-symbol{font-size:28px;color:#ad8654}
+.pinned-unfold strong{display:block;font:normal 23px/1.55 'Gowun Batang',serif}
+.pinned-unfold small{display:block;color:#8e7b66;font-size:11px;line-height:1.6;margin-top:4px}
+.pinned-unfold-arrow{font-size:20px;margin-left:auto}
+@media(max-width:680px){
+.featured-opening{padding:19px 0 10px}
+.featured-opening .pinned-open-bar{font-size:9px;gap:7px}
+.pinned-top-fold{font-size:11px;padding:7px 12px}
+.featured-opening .pinned-unfold{padding:18px 15px;gap:9px}
+.pinned-unfold-symbol{font-size:24px}
+.pinned-unfold strong{font-size:18px}
+.pinned-unfold small{font-size:10px}
+}
 </style>
 </head>
 <body>
@@ -262,6 +284,33 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
       <a href="#home" class="brand" aria-label="처음으로"><span class="brand-mark">✦</span><span>2026 · 마지막 페이지</span></a>
       <nav class="main-nav" aria-label="주요 메뉴"><a class="nav-btn" href="#gallery">편지 읽기</a><a class="nav-btn" href="#mine">내 편지함</a><a class="nav-cta" href="#write">나도 쓰기</a></nav>
     </header>
+    <section class="featured-opening" id="pinnedLetter" aria-labelledby="pinnedLetterHeading">
+  <div class="pinned-open-container" id="pinnedOpenContainer">
+    <div class="pinned-open-bar"><span>✦ &nbsp; 2026년, 가장 먼저 전하는 편지</span><button type="button" id="pinnedFoldTop" class="pinned-top-fold" aria-controls="pinnedOpenContainer" aria-expanded="true">편지 접기 ↑</button></div>
+    <div class="pinned-full-body">
+      <div class="pinned-full-head"><span>2026 · 또상에게 전하는 편지</span><h3 id="pinnedLetterHeading">함께해 주셔서 고맙습니다</h3></div>
+      <div class="pinned-full-text"><p>안녕하세요 또상 여러분!</p>
+<p>2026년도 어느덧 끝을 향해 가고 있네요. 한 해를 마무리하면서 꼭 전하고 싶었던 이야기가 있어 이렇게 편지를 남깁니다.</p>
+<p>올해 또상에서 비밀친구 활동과 작은 미션을 준비하고 교양 정리표나 편지함 같은 것들도 만들어봤습니다. 지금 돌아보면 서로 다른 활동이었지만 시작한 이유는 비슷했던 것 같아요.</p>
+<p>평소에 대화할 기회가 없었던 분들이 조금 더 편하게 이야기를 나누고 필요한 정보를 찾는 수고를 조금이나마 덜고, 바쁜 하루 속에서 짧은 응원 한마디를 만날 수 있으면 좋겠다고 생각했습니다. 누군가의 학교생활에 작더라도 기분 좋은 순간을 더해보고 싶었어요.</p>
+<p>물론 준비하는 과정이 늘 순조롭지만은 않았습니다. 어떻게 하면 더 편하게 참여할 수 있을지 고민도 했고 누군가는 불편하고 이상하게 느낄 수도 있겠다고 생각했으며 막상 만들고 나면 아쉬운 부분도 보였습니다. 그래도 이런 작은 시도들이 누군가에게 도움이 되거나 좋은 기억으로 남았다면 그것만으로도 참 기쁠 것 같습니다.</p>
+<p>무엇보다 올해 또상에서 함께해 주신 모든 분께 감사드리고 싶습니다. 자주 이야기 나누지 못했던 분들도 계시겠지만 같은 공간에서 함께 시간을 보냈다는 것만으로도 소중한 인연이라고 생각합니다.</p>
+<p>그리고 모두에게 꼭 전하고 싶은 말이 있습니다.</p>
+<p>올해도 정말 고생 많으셨습니다.</p>
+<p>수업과 시험, 과제, 여러 활동까지 각자의 자리에서 바쁜 날들을 보내셨을 텐데, 남은 한 해만큼은 스스로에게도 수고했다고 이야기해 주셨으면 좋겠습니다. 다가오는 시험도 너무 무리하지 마시고, 식사와 잠도 잘 챙기셨으면 해요.</p>
+<p>이번 마지막 편지함도 그런 마음으로 만들었습니다. 꼭 특별하거나 멋진 말을 남기지 않으셔도 괜찮습니다. 올해의 추억이나 고마웠던 일, 누군가에게 전하고 싶은 한마디처럼 떠오르는 이야기를 편하게 적어주세요. 그냥 다른 분들의 편지를 읽고 가셔도 좋습니다.</p>
+<p>이 작은 공간이 잠시라도 따뜻한 시간이 되었으면 좋겠습니다.</p>
+<p>2026년, 함께해 주셔서 진심으로 감사합니다. 남은 시험 기간도 잘 마무리하시고, 모두 건강하고 따뜻한 연말 보내시길 바랍니다.🍀🍀</p>
+<p>— 또상에서 작은 것들을 만들었던 사람 드림</p></div>
+      <button type="button" id="closePinnedLetter" class="pinned-letter-close-btn">편지 접기 ↑</button>
+    </div>
+  </div>
+  <button type="button" id="pinnedUnfold" class="pinned-unfold" aria-controls="pinnedOpenContainer" aria-expanded="false" hidden>
+    <span class="pinned-unfold-symbol" aria-hidden="true">✉</span>
+    <span><strong>함께해 주셔서 고맙습니다</strong><small>가장 먼저 전하는 편지입니다. 누르시면 전문이 펼쳐집니다.</small></span>
+    <span class="pinned-unfold-arrow" aria-hidden="true">↓</span>
+  </button>
+</section>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <span class="eyebrow">THE LAST PAGE OF 2026</span>
@@ -307,34 +356,7 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
   </div>
   <p class="intro-footnote">누가 편지를 몇 장 썼는지 집계하거나 보여주지 않아. 공개 편지에는 작성자 이름·별명이나 작성 시각도 표시하지 않아. 본문에 직접 신원을 밝히면 다른 사람이 알아볼 수 있으니 주의해 줘.</p>
 </section>
-  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div><details class="pinned-letter-wrap" id="pinnedLetter" open>
-    <summary class="pinned-letter-card">
-      <span class="pinned-letter-art" aria-hidden="true"><span class="pinned-envelope"><span class="pinned-seal">✦</span></span></span>
-      <span class="pinned-letter-copy">
-        <span class="pinned-letter-eyebrow">FROM THE ONE WHO MADE THIS SPACE · 가장 먼저 전하는 편지</span>
-        <span class="pinned-letter-title">함께해 주셔서 고맙습니다</span>
-        <span class="pinned-letter-excerpt">비밀친구와 작은 미션, 교양 정리표와 편지함까지. 그동안 이런 활동들을 준비했던 이유와 함께해 주신 분들께 전하는 감사 인사입니다.</span>
-        <span class="pinned-letter-open"><span class="pin-collapsed-label">편지 읽어보기 ↗</span><span class="pin-expanded-label">편지 접기 ↑</span></span>
-      </span>
-    </summary>
-    <div class="pinned-full-body">
-      <div class="pinned-full-head"><span>2026 · 또상에게 전하는 편지</span><h3>함께해 주셔서 고맙습니다</h3></div>
-      <div class="pinned-full-text"><p>안녕하세요 또상 여러분!</p>
-<p>2026년도 어느덧 끝을 향해 가고 있네요. 한 해를 마무리하면서 꼭 전하고 싶었던 이야기가 있어 이렇게 편지를 남깁니다.</p>
-<p>올해 또상에서 비밀친구 활동과 작은 미션을 준비하고 교양 정리표나 편지함 같은 것들도 만들어봤습니다. 지금 돌아보면 서로 다른 활동이었지만 시작한 이유는 비슷했던 것 같아요.</p>
-<p>평소에 대화할 기회가 없었던 분들이 조금 더 편하게 이야기를 나누고 필요한 정보를 찾는 수고를 조금이나마 덜고, 바쁜 하루 속에서 짧은 응원 한마디를 만날 수 있으면 좋겠다고 생각했습니다. 누군가의 학교생활에 작더라도 기분 좋은 순간을 더해보고 싶었어요.</p>
-<p>물론 준비하는 과정이 늘 순조롭지만은 않았습니다. 어떻게 하면 더 편하게 참여할 수 있을지 고민도 했고 누군가는 불편하고 이상하게 느낄 수도 있겠다고 생각했으며 막상 만들고 나면 아쉬운 부분도 보였습니다. 그래도 이런 작은 시도들이 누군가에게 도움이 되거나 좋은 기억으로 남았다면 그것만으로도 참 기쁠 것 같습니다.</p>
-<p>무엇보다 올해 또상에서 함께해 주신 모든 분께 감사드리고 싶습니다. 자주 이야기 나누지 못했던 분들도 계시겠지만 같은 공간에서 함께 시간을 보냈다는 것만으로도 소중한 인연이라고 생각합니다.</p>
-<p>그리고 모두에게 꼭 전하고 싶은 말이 있습니다.</p>
-<p>올해도 정말 고생 많으셨습니다.</p>
-<p>수업과 시험, 과제, 여러 활동까지 각자의 자리에서 바쁜 날들을 보내셨을 텐데, 남은 한 해만큼은 스스로에게도 수고했다고 이야기해 주셨으면 좋겠습니다. 다가오는 시험도 너무 무리하지 마시고, 식사와 잠도 잘 챙기셨으면 해요.</p>
-<p>이번 마지막 편지함도 그런 마음으로 만들었습니다. 꼭 특별하거나 멋진 말을 남기지 않으셔도 괜찮습니다. 올해의 추억이나 고마웠던 일, 누군가에게 전하고 싶은 한마디처럼 떠오르는 이야기를 편하게 적어주세요. 그냥 다른 분들의 편지를 읽고 가셔도 좋습니다.</p>
-<p>이 작은 공간이 잠시라도 따뜻한 시간이 되었으면 좋겠습니다.</p>
-<p>2026년, 함께해 주셔서 진심으로 감사합니다. 남은 시험 기간도 잘 마무리하시고, 모두 건강하고 따뜻한 연말 보내시길 바랍니다.🍀🍀</p>
-<p>— 또상에서 작은 것들을 만들었던 사람 드림</p></div>
-      <button type="button" id="closePinnedLetter" class="pinned-letter-close-btn">편지 접기 ↑</button>
-    </div>
-  </details>
+  <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>먼저, 모두의 편지</h2><p>한 해의 끝에서 누군가가 남긴 마음을 읽어봐. 네 이야기는 그다음에 남겨도 좋아.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">모두의 마음을 모은 공간</span></div></div>
   <div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
   <section class="section shell" id="write"><div class="split-section">
     <div class="writing-card"><div class="paper-top"><div class="paper-mini">WRITE A LETTER</div><h3>편지 한 장 남기기</h3><p>떠오르는 말을 그대로 적어줘.</p></div>
@@ -424,7 +446,16 @@ $('#receiptInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('#recover
 function confirmDeleteLetter(l){const box=modalBase('DELETE LETTER','정말 이 편지를 삭제할까?');box.append(create('p','', '삭제한 편지는 복구할 수 없어. 다시 한 번 선택해 줘.'));const actions=create('div','modal-actions');const cancel=create('button','subtle-btn','취소');cancel.onclick=()=>showLetter(l,true);const yes=create('button','red-btn','확실히 삭제하기');yes.onclick=async()=>{yes.disabled=true;yes.textContent='삭제 중…';await deleteLetter(l);yes.disabled=false;yes.textContent='확실히 삭제하기'};actions.append(cancel,yes);box.append(actions);showModal(box)}
 async function deleteLetter(l){const code=receipts.find(x=>x.startsWith(l.id+'.'));if(!code){toast('열람 코드를 찾을 수 없어.');return}try{if(live)await api('/api/letters/delete',{method:'POST',body:{receipt:code}});else{demoLetters=demoLetters.filter(x=>x.id!==l.id);saveDemo()}receipts=receipts.filter(x=>x!==code);saveReceipts();closeModal();renderMy();await renderGallery();toast('편지를 삭제했어.')}catch(err){toast(err.message)}}
 $('#refreshGallery').onclick=renderGallery;
-$('#closePinnedLetter').addEventListener('click',()=>{const panel=$('#pinnedLetter');panel.open=false;panel.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});});
+function setPinnedOpen(open) {
+  $('#pinnedOpenContainer').hidden=!open;
+  $('#pinnedUnfold').hidden=open;
+  $('#pinnedFoldTop').setAttribute('aria-expanded',String(open));
+  $('#pinnedUnfold').setAttribute('aria-expanded',String(open));
+  if(!open) $('#pinnedLetter').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+}
+$('#pinnedFoldTop').addEventListener('click',()=>setPinnedOpen(false));
+$('#closePinnedLetter').addEventListener('click',()=>setPinnedOpen(false));
+$('#pinnedUnfold').addEventListener('click',()=>setPinnedOpen(true));
 function setupAdmin(){if(new URLSearchParams(location.search).get('admin')!=='1')return;const panel=$('#adminPanel');panel.classList.add('show');if(!live){$('#pendingList').textContent='체험 모드에서는 운영진 검토가 필요하지 않아.';return}const load=async()=>{const key=$('#adminKey').value;const list=$('#pendingList');list.textContent='불러오는 중…';try{const d=await api('/api/admin/pending',{headers:{'X-Admin-Key':key}});list.replaceChildren();if(!d.letters.length)list.textContent='검토할 공개 편지가 없어.';for(const l of d.letters){const card=create('div','admin-card'),info=create('div');info.style.flex='1';info.append(create('strong','','검토할 공개 편지'),create('p','',l.body),create('small','',`공개 예정: ${fmtDate(l.open_at)}`));const actions=create('div');for(const [status,label] of [['approved','승인'],['rejected','거절']]){const b=create('button',status==='approved'?'subtle-btn':'red-btn',label);b.onclick=async()=>{b.disabled=true;try{await api('/api/admin/moderate',{method:'POST',body:{id:l.id,status},headers:{'X-Admin-Key':key}});toast(label+' 처리했어.');await load();renderGallery()}catch(err){toast(err.message)}finally{b.disabled=false}};actions.append(b)}card.append(info,actions);list.append(card)}}catch(err){list.textContent='불러오지 못했어: '+err.message}};$('#adminLoad').onclick=load}
 $('#modeText').innerHTML=live?'실제 편지함에 연결되어 있어요. <strong>공개 편지는 운영진 확인 후 게시됩니다.</strong>':storageReady?'<strong>체험 모드</strong> · 작성한 편지는 이 브라우저에만 저장돼요. 서버 연결 전에는 다른 사람과 공유되지 않아요.':'<strong>체험 모드</strong> · 이 미리보기에서는 브라우저 저장이 제한되어 새로고침 시 편지가 사라질 수 있어요.';
 // Snow rendered without external imagery: gentle, subtle winter atmosphere.
