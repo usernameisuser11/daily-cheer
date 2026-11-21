@@ -139,6 +139,36 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
 .my-panel{padding:19px 14px}
 .closing{padding:43px 18px}
 }
+
+/* 2026 year-end letterbook: compact, immediately understandable introduction */
+.hero-meaning{font-weight:600;color:#f6e2c3}
+.intro-guide{max-width:800px;padding-top:34px;padding-bottom:18px}
+.intro-copy{text-align:center;max-width:700px;margin:0 auto 25px}
+.intro-label{display:block;color:#ac8d62;font:600 10px 'DM Sans',sans-serif;letter-spacing:.23em;margin-bottom:9px}
+.intro-copy h2{font:normal 27px/1.6 'Gowun Batang',serif;letter-spacing:-.04em;color:#293747;margin:0 0 12px}
+.intro-copy p{font-size:13px;line-height:2.15;color:#6d716f;word-break:keep-all;margin:0 auto}
+.intro-copy p strong{color:#4d5052;font-weight:600}
+.intro-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.intro-step{display:flex;align-items:flex-start;gap:11px;background:#fffdfa;border:1px solid #e9e1d5;border-radius:12px;padding:17px 15px 16px;min-width:0}
+.intro-num{color:#af9065;font:600 11px 'DM Sans',sans-serif;padding-top:4px;letter-spacing:.08em}
+.intro-step h3{font-size:13px;font-weight:650;color:#3f4851;margin:0 0 7px;letter-spacing:-.035em}
+.intro-step p{font-size:11px;line-height:1.95;color:#817a72;margin:0;word-break:keep-all}
+.intro-footnote{text-align:center;font-size:10px;line-height:1.7;color:#999084;margin:15px 0 0}
+#write{padding-top:23px}
+@media(max-width:680px){
+  .hero p{font-size:12px;line-height:1.95}
+  .intro-guide{padding-top:29px;padding-bottom:8px}
+  .intro-copy{margin-bottom:17px}
+  .intro-copy h2{font-size:24px}
+  .intro-copy p{font-size:12px;line-height:2}
+  .intro-steps{grid-template-columns:1fr;gap:7px}
+  .intro-step{padding:11px 14px;gap:12px}
+  .intro-num{font-size:11px;padding-top:1px}
+  .intro-step h3{font-size:12px;margin-bottom:3px}
+  .intro-step p{font-size:11px;line-height:1.7}
+  .intro-footnote{font-size:10px;padding:0 6px;margin-top:11px}
+  #write{padding-top:10px}
+}
 </style>
 </head>
 <body>
@@ -153,7 +183,7 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
       <div class="hero-copy">
         <span class="eyebrow">THE LAST PAGE OF 2026</span>
         <h1 id="hero-title">2026,<br><em>우리의 마지막 페이지</em></h1>
-        <p>한 해의 끝에서, 전하고 싶은 이야기를 남겨줘.<br>짧아도 길어도, 어떤 말이든 괜찮아.</p>
+        <p>올해의 마음을 편지로 남기고, 서로의 이야기를 읽는<br><strong class="hero-meaning">또래상담의 2026년 마지막 편지함</strong>이야.</p>
         <a class="hero-link" href="#write">마음 한 장 남기기 <span aria-hidden="true">↗</span></a>
       </div>
       <div class="hero-ornament" aria-hidden="true"><div class="hero-envelope"><span>✦</span></div><div class="hero-ornament-caption">A NOTE TO REMEMBER</div></div>
@@ -162,6 +192,28 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
   <div class="modebar"><span class="dot"></span><span id="modeText">체험 모드 · 작성한 편지는 이 브라우저에만 저장돼요.</span></div>
 </div>
 <main>
+  <section class="intro-guide shell" aria-labelledby="intro-title">
+  <div class="intro-copy">
+    <span class="intro-label">ABOUT THIS SPACE</span>
+    <h2 id="intro-title">이곳에서는 무엇을 하나요?</h2>
+    <p>한 해를 마무리하면서 <strong>하고 싶은 말을 자유롭게 편지로 남기는 공간</strong>이야. 시험을 앞둔 누군가에게 응원을 보내도 좋고, 고마웠던 사람에게 마음을 전해도 좋아. 올해의 기억을 적거나 나 자신에게 편지를 써도 괜찮아. <strong>정해진 주제도, 꼭 지켜야 할 형식도 없어.</strong></p>
+  </div>
+  <div class="intro-steps" aria-label="편지함 이용 방법">
+    <div class="intro-step">
+      <span class="intro-num">01</span>
+      <div><h3>마음 적기</h3><p>아래 편지지에 지금 전하고 싶은 이야기를 편하게 적어줘.</p></div>
+    </div>
+    <div class="intro-step">
+      <span class="intro-num">02</span>
+      <div><h3>편지 방식 선택하기</h3><p>익명이나 별명으로 남길 수 있어. 모두에게 공개할지, 나만 볼지도 정하고, 편지가 열리는 날도 직접 선택할 수 있어.</p></div>
+    </div>
+    <div class="intro-step">
+      <span class="intro-num">03</span>
+      <div><h3>나중에 다시 만나기</h3><p>공개 편지는 운영진 확인 후 다른 사람들도 읽을 수 있어. 비공개 편지는 작성 후 받은 <strong>열람 코드</strong>로만 찾을 수 있으니 꼭 보관해 줘.</p></div>
+    </div>
+  </div>
+  <p class="intro-footnote">원하는 말만 남겨도 충분해. 다른 사람의 개인정보나 상처가 될 말은 적지 말아 줘.</p>
+</section>
   <section class="section shell" id="write"><div class="split-section">
     <div class="writing-card"><div class="paper-top"><div class="paper-mini">WRITE A LETTER</div><h3>편지 한 장 남기기</h3><p>떠오르는 말을 그대로 적어줘.</p></div>
       <form class="form-body" id="letterForm" novalidate><div class="field"><div class="field-head"><label for="letterBody">무슨 이야기든 괜찮아</label><span class="optional">최대 1,500자</span></div><textarea id="letterBody" class="letter-area" maxlength="1500" required placeholder="2026년의 끝에서, 전하고 싶은 이야기가 있다면…&#10;&#10;자유롭게 적어줘."></textarea><div class="letter-count" id="letterCount">0 / 1,500자</div></div>
