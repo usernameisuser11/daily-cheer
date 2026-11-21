@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "last-page-2026-api",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-21",
+  "keep_vars": true,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://usernameisuser11.github.io"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "last-page-2026-db",
+      "database_id": "267f989b-9bdd-4587-8511-9c5784b5ca39"
+    }
+  ]
+}
