@@ -169,6 +169,25 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
   .intro-footnote{font-size:10px;padding:0 6px;margin-top:11px}
   #write{padding-top:10px}
 }
+
+/* Clear review rationale and honest privacy boundaries */
+.safety-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 0}
+.safety-item{border-top:1px solid #dcd3c5;padding:15px 8px 0;background:transparent}
+.safety-title{display:flex;gap:9px;align-items:center;margin-bottom:8px}
+.safety-symbol{width:23px;height:23px;flex:0 0 23px;display:grid;place-items:center;color:#9a784e;border:1px solid #ddcdb5;border-radius:50%;font-size:13px}
+.safety-item h3{font-size:13px;font-weight:650;color:#37424c;letter-spacing:-.025em;margin:0}
+.safety-item p{font-size:11px;line-height:2.05;color:#766f67;word-break:keep-all;margin:0}
+.safety-item strong{color:#504a43;font-weight:650}
+.intro-footnote{margin-top:20px;font-size:10px;line-height:1.9}
+.privacy-link{color:#796344;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+#privacy{scroll-margin-top:22px}
+@media(max-width:680px){
+.safety-info{grid-template-columns:1fr;gap:7px;margin-top:14px}
+.safety-item{padding:13px 2px 5px}
+.safety-item h3{font-size:12px}
+.safety-item p{font-size:11px;line-height:1.9}
+.intro-footnote{margin-top:12px}
+}
 </style>
 </head>
 <body>
@@ -209,10 +228,20 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
     </div>
     <div class="intro-step">
       <span class="intro-num">03</span>
-      <div><h3>나중에 다시 만나기</h3><p>공개 편지는 운영진 확인 후 다른 사람들도 읽을 수 있어. 비공개 편지는 작성 후 받은 <strong>열람 코드</strong>로만 찾을 수 있으니 꼭 보관해 줘.</p></div>
+      <div><h3>나중에 다시 만나기</h3><p>공개 편지는 개인정보와 비방 여부를 확인한 뒤 게시돼. 비공개 편지는 공개되지 않고, 받은 <strong>열람 코드</strong>로 다시 찾을 수 있어.</p></div>
     </div>
   </div>
-  <p class="intro-footnote">원하는 말만 남겨도 충분해. 다른 사람의 개인정보나 상처가 될 말은 적지 말아 줘.</p>
+  <div class="safety-info" aria-label="편지 검토와 비밀 유지 안내">
+    <article class="safety-item">
+      <div class="safety-title"><span class="safety-symbol" aria-hidden="true">✧</span><h3>왜 내가 공개 편지를 먼저 확인할까?</h3></div>
+      <p>이곳은 여러 사람이 함께 읽는 편지함이니까, <strong>누군가의 개인정보가 드러나거나 다른 사람에게 상처가 되는 글이 공개되지 않도록</strong> 먼저 살펴보는 거야. 마음을 평가하거나 좋은 편지만 고르려는 게 아니야. 문제가 없는 공개 편지는 내용을 고치지 않고 그대로 올리고, 안전하게 공개하기 어려운 편지는 게시하지 않을 수 있어.</p>
+    </article>
+    <article class="safety-item" id="privacy">
+      <div class="safety-title"><span class="safety-symbol" aria-hidden="true">⌁</span><h3>내가 쓴 편지는 비밀이 지켜질까?</h3></div>
+      <p><strong>익명으로 작성하면 이름은 표시되지 않아.</strong> '나만 보기' 편지는 다른 사람의 편지함이나 운영진의 공개 편지 검토 목록에 올라오지 않아. 다만 편지는 서버에 저장되기 때문에 <strong>서비스 관리자가 운영·보안 목적으로 저장된 데이터에 접근할 수는 있어.</strong> 비공개 편지를 다시 열려면 열람 코드가 필요하고, 코드를 아는 사람은 누구나 열람할 수 있으니 다른 사람에게 알려주지 말아 줘.</p>
+    </article>
+  </div>
+  <p class="intro-footnote">모두에게 공개할 편지는 승인 후 다른 사람도 읽을 수 있어. 이름·학번·연락처처럼 나나 다른 사람을 알아볼 수 있는 정보는 적지 않는 걸 권장해.</p>
 </section>
   <section class="section shell" id="write"><div class="split-section">
     <div class="writing-card"><div class="paper-top"><div class="paper-mini">WRITE A LETTER</div><h3>편지 한 장 남기기</h3><p>떠오르는 말을 그대로 적어줘.</p></div>
@@ -226,7 +255,7 @@ main{background:linear-gradient(180deg,#f9f6f0,#f5f0e8)}
       <div class="field"><div class="field-head"><label>언제 봉투를 열까?</label></div><div class="schedule-options" id="scheduleChoices"><button class="schedule-option selected" type="button" data-schedule="now" aria-pressed="true"><span class="date-icon">✦</span>지금부터</button><button class="schedule-option" type="button" data-schedule="exam" aria-pressed="false"><span class="date-icon">☾</span>시험 끝난 후</button><button class="schedule-option" type="button" data-schedule="year" aria-pressed="false"><span class="date-icon">✧</span>12월 31일</button></div><div class="custom-date" id="customDate"><input class="input" type="date" id="openDate" aria-label="봉투를 열 날짜"><input class="input" type="time" id="openTime" aria-label="봉투를 열 시간" value="18:00"></div><div class="setting-note" id="scheduleNote">지금 작성하고, 공개 승인이 끝나면 다른 사람들도 읽을 수 있어.</div></div>
         </div>
       </details>
-      <div class="bottom-notice">편지를 보낸 뒤 나오는 <strong>열람 코드</strong>는 꼭 보관해 줘. 나만 보기 편지는 코드가 있어야 다시 읽을 수 있어.</div><div class="submit-wrap"><button class="btn-primary" id="submitBtn" type="submit">편지 남기기 <span aria-hidden="true">↗</span></button><p class="small-print">공개 편지는 운영진 확인 후 게시돼. 개인정보나 비방은 적지 말아 줘.</p></div></form>
+      <div class="bottom-notice">편지를 보낸 뒤 나오는 <strong>열람 코드</strong>는 꼭 보관해 줘. 나만 보기 편지는 코드가 있어야 다시 읽을 수 있어.</div><div class="submit-wrap"><button class="btn-primary" id="submitBtn" type="submit">편지 남기기 <span aria-hidden="true">↗</span></button><p class="small-print">공개 편지만 안전한 게시를 위해 확인해. <a href="#privacy" class="privacy-link">비밀 유지 안내</a></p></div></form>
     </div></div></section>
   <section class="section gallery-section" id="gallery"><div class="shell gallery-shell"><div class="gallery-top"><div class="sec-head"><div class="kicker">LETTERS TOGETHER</div><h2>모두의 편지</h2><p>누군가가 남긴 마음을 조용히 읽어봐.</p></div><div class="gallery-actions"><button id="refreshGallery" type="button" class="subtle-btn">↻ 새로고침</button><span id="galleryMeta" class="status-pill">편지를 살펴보는 중</span></div></div><div class="letter-grid" id="letterGrid"></div><div class="gallery-footer" id="galleryFooter"></div></div></section>
   <section class="section my-section" id="mine"><div class="shell"><div class="sec-head"><div class="kicker">MY LETTERS</div><h2>내 편지함</h2><p>내가 쓴 편지를 다시 읽거나, 열람 코드로 찾아봐.</p></div><div class="my-panel"><div style="font:19px 'Gowun Batang',serif">✉ &nbsp; 열람 코드로 편지 찾기</div><p>다른 기기에서 작성했거나 브라우저 기록을 지웠다면, 편지 작성 후 받은 열람 코드를 입력해 줘. 비공개 편지는 이 코드가 없으면 찾을 수 없어.</p><div class="recovery"><input class="input" id="receiptInput" placeholder="열람 코드 붙여넣기" autocomplete="off" aria-label="열람 코드"><button class="subtle-btn" id="recoverBtn" type="button">편지 찾기</button></div><div id="myList" class="my-list"></div></div></div></section>
